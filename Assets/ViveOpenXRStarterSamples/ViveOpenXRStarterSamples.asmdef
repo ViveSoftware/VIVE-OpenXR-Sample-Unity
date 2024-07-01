@@ -1,0 +1,26 @@
+{
+    "name": "ViveOpenXRStarterSamples",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d0a204fb2c62e9f4caca92f1c1e8c06b"
+    ],
+    "includePlatforms": [
+        "Android",
+        "Editor",
+        "WindowsStandalone64"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.htc.upm.vive.openxr",
+            "expression": "2.4",
+            "define": "DEFINE_VIVE_OPENXR"
+        }
+    ],
+    "noEngineReferences": false
+}
