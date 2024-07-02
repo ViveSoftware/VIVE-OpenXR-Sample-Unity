@@ -38,11 +38,11 @@ git clone https://github.com/ViveSoftware/VIVE-OpenXR-Sample-Unity.git
 
 - We use the [VRM](https://github.com/vrm-c/UniVRM/releases) packages for the avatar development.
 
-## Integrate Samples to your own project
+## Integrate Samples to Your Own Project
 1. Make sure your project uses the same SDK version
 2. Move the samples to your project
    <details>
-      <summary><b>Copy Samples directory</b></summary>
+      <summary><b>Copy Samples Directory</b></summary>
 
       + Copy [Assets/ViveOpenXRStarterSamples](./Assets/ViveOpenXRStarterSamples) directory to your own project
     </details>
