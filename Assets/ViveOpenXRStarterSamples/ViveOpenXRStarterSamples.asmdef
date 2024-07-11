@@ -2,7 +2,9 @@
     "name": "ViveOpenXRStarterSamples",
     "rootNamespace": "",
     "references": [
-        "GUID:d0a204fb2c62e9f4caca92f1c1e8c06b"
+        "GUID:d0a204fb2c62e9f4caca92f1c1e8c06b",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:4847341ff46394e83bb78fbd0652937e"
     ],
     "includePlatforms": [
         "Android",
