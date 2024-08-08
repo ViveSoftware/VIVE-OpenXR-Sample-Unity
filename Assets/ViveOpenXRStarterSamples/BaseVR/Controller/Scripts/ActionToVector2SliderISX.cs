@@ -1,16 +1,22 @@
+// Copyright HTC Corporation All Rights Reserved.
+
 using UnityEngine.UI;
-using UnityEngine.InputSystem;
 using UnityEngine;
 using UnityEngine.XR;
+
+#if DEFINE_VIVE_OPENXR
+using UnityEngine.InputSystem;
+#endif
 
 namespace VIVE.OpenXR.StarterSample.ControllerSample
 {
     public class ActionToVector2SliderISX : MonoBehaviour
     {
+#if DEFINE_VIVE_OPENXR
         [SerializeField]
         private InputActionReference m_ActionReference;
         public InputActionReference actionReference { get => m_ActionReference; set => m_ActionReference = value; }
-
+#endif
         [SerializeField]
         public Slider xAxisSlider = null;
 
@@ -29,6 +35,8 @@ namespace VIVE.OpenXR.StarterSample.ControllerSample
         }
         void Update()
         {
+
+#if DEFINE_VIVE_OPENXR
             if (actionReference != null && actionReference.action != null && xAxisSlider != null && yAxisSlider != null)
             {
                 if (actionReference.action.enabled)
@@ -44,6 +52,7 @@ namespace VIVE.OpenXR.StarterSample.ControllerSample
             {
                 SetVisible(gameObject, false);
             }
+#endif
         }
 
         void SetVisible(GameObject go, bool visible)
