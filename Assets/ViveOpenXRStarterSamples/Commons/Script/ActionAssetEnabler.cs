@@ -1,9 +1,14 @@
+// Copyright HTC Corporation All Rights Reserved.
+
+#if DEFINE_VIVE_OPENXR
 using UnityEngine.InputSystem;
+#endif
 
 namespace UnityEngine.XR.OpenXR.Samples.ControllerSample
 {
     public class ActionAssetEnabler : MonoBehaviour
     {
+#if DEFINE_VIVE_OPENXR
         [SerializeField]
         InputActionAsset m_ActionAsset;
         public InputActionAsset actionAsset
@@ -19,6 +24,7 @@ namespace UnityEngine.XR.OpenXR.Samples.ControllerSample
                 m_ActionAsset.Enable();
             }
         }
+#endif
 
     }
 }
