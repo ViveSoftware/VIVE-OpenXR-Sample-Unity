@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
 using System.Text;
+#if DEFINE_VIVE_OPENXR
 using UnityEngine.InputSystem;
+#endif
 
 namespace VIVE.OpenXR.StarterSample.XRTracker 
 {
     public class TrackerImport : MonoBehaviour
     {
-
+#if DEFINE_VIVE_OPENXR
         [SerializeField]
         private string m_TrackerName = "";
         public string TrackerName { get { return m_TrackerName; } set { m_TrackerName = value; } }
@@ -50,7 +52,7 @@ namespace VIVE.OpenXR.StarterSample.XRTracker
         [SerializeField]
         private InputActionReference m_TrackpadTouch = null;
         public InputActionReference TrackpadTouch { get { return m_TrackpadTouch; } set { m_TrackpadTouch = value; } }
-
+#endif
 
         private Text m_Text = null;
         private void Start()
@@ -62,6 +64,7 @@ namespace VIVE.OpenXR.StarterSample.XRTracker
 
         void Update()
         {
+#if DEFINE_VIVE_OPENXR
             if (m_Text == null) { return; }
 
             m_Text.text = m_TrackerName;
@@ -179,6 +182,7 @@ namespace VIVE.OpenXR.StarterSample.XRTracker
                     m_Text.text += msg;
                 }
             }
+#endif
         }
 
         public enum ActionRefError
@@ -200,6 +204,7 @@ namespace VIVE.OpenXR.StarterSample.XRTracker
 
             return "";
         }
+#if DEFINE_VIVE_OPENXR
         private static ActionRefError VALIDATE(InputActionReference actionReference)
         {
             if (actionReference == null) { return ActionRefError.REFERENCE_NULL; }
@@ -322,6 +327,7 @@ namespace VIVE.OpenXR.StarterSample.XRTracker
 
             return false;
         }
+#endif
     }
 }
 
