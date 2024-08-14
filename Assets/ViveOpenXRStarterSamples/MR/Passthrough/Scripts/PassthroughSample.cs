@@ -1,13 +1,16 @@
 // Copyright HTC Corporation All Rights Reserved.
 
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 #if DEFINE_VIVE_OPENXR
 using VIVE.OpenXR.CompositionLayer.Passthrough;
 using VIVE.OpenXR.CompositionLayer;
+using UnityEngine.InputSystem;
 # endif
 
 namespace VIVE.OpenXR.StarterSample.Passthrough {
@@ -16,6 +19,14 @@ namespace VIVE.OpenXR.StarterSample.Passthrough {
 #if DEFINE_VIVE_OPENXR
         private LayerType currentActiveLayerType = LayerType.Underlay;
         private ProjectedPassthroughSpaceType currentActiveSpaceType = ProjectedPassthroughSpaceType.Worldlock;
+
+        [SerializeField]
+        private InputActionReference m_ActionReferenceA;
+        public InputActionReference actionReferenceA { get => m_ActionReferenceA; set => m_ActionReferenceA = value; }
+
+        [SerializeField]
+        private InputActionReference m_ActionReferenceB;
+        public InputActionReference actionReferenceB { get => m_ActionReferenceB; set => m_ActionReferenceB = value; }
 #endif
         private int activePassthroughID = 0;
         public Mesh passthroughMesh = null;
@@ -24,7 +35,7 @@ namespace VIVE.OpenXR.StarterSample.Passthrough {
 
         public Toggle m_Toggle_Planar;
         public Toggle m_Toggle_Projected;
-        public Text m_Text;
+        float valueA, valueB;
         // Start is called before the first frame update
         void Start()
         {
@@ -37,15 +48,19 @@ namespace VIVE.OpenXR.StarterSample.Passthrough {
         // Update is called once per frame
         void Update()
         {
+
 #if DEFINE_VIVE_OPENXR
-            if (VRSInputManager.instance.GetButtonDown(VRSButtonReference.B)) //Set Passthrough as Overlay
-            {
-                SetPassthroughToOverlay();
-            }
-            if (VRSInputManager.instance.GetButtonDown(VRSButtonReference.A)) //Set Passthrough as Underlay
-            {
-                SetPassthroughToUnderlay();
-            }
+                 valueA = actionReferenceA.action.ReadValue<float>();
+                 valueB = actionReferenceB.action.ReadValue<float>();
+                
+                if (valueA >= 0.5F)
+                {
+                    SetPassthroughToUnderlay();
+                }
+                if (valueB >= 0.5f)
+                {
+                    SetPassthroughToOverlay();
+                }
 #endif
 
         }
