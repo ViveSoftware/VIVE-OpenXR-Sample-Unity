@@ -4,7 +4,8 @@
     "references": [
         "GUID:d0a204fb2c62e9f4caca92f1c1e8c06b",
         "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:4847341ff46394e83bb78fbd0652937e"
+        "GUID:4847341ff46394e83bb78fbd0652937e",
+        "GUID:ce522b6ed64c8be4c989a1d26d0e3275"
     ],
     "includePlatforms": [
         "Android",
@@ -22,6 +23,11 @@
             "name": "com.htc.upm.vive.openxr",
             "expression": "2.4",
             "define": "DEFINE_VIVE_OPENXR"
+        },
+        {
+            "name": "com.unity.xr.hands",
+            "expression": "1.3.0",
+            "define": "DEFINE_XR_HANDS"
         }
     ],
     "noEngineReferences": false
