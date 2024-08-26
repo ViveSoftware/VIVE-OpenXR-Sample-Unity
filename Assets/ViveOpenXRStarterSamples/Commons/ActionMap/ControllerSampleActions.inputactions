@@ -1,5 +1,5 @@
 {
-    "name": "InputActions",
+    "name": "ControllerSampleActions",
     "maps": [
         {
             "name": "LeftHand",
@@ -15,40 +15,13 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "GripRotation",
-                    "type": "Value",
-                    "id": "9a324f95-c0bd-46b0-a59e-7576f0279b65",
-                    "expectedControlType": "Quaternion",
+                    "name": "TriggerTouch",
+                    "type": "Button",
+                    "id": "2db6bb09-543a-4892-bceb-974e887e7f6d",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "GripPosition",
-                    "type": "Value",
-                    "id": "519bdbd2-563b-4227-8533-200dc2cd257f",
-                    "expectedControlType": "Vector3",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "AimRotation",
-                    "type": "Value",
-                    "id": "8b0c064e-e191-42f1-9493-c908ccf24b22",
-                    "expectedControlType": "Quaternion",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "AimPosition",
-                    "type": "Value",
-                    "id": "4c72e7e0-5dda-44f9-855f-6bcae7eb29db",
-                    "expectedControlType": "Vector3",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Trigger",
@@ -177,154 +150,46 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "IsTracked",
+                    "name": "PointerPosition",
                     "type": "Value",
-                    "id": "384094ab-6290-4de1-9b73-6dd7fae94298",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "TrackingState",
-                    "type": "Value",
-                    "id": "789d1198-014e-4bf4-b111-77520dfe49b6",
-                    "expectedControlType": "Integer",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "PinchStrength",
-                    "type": "Value",
-                    "id": "f898cc19-e826-4614-93a3-6b5d51889820",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "PinchPose",
-                    "type": "PassThrough",
-                    "id": "4b012362-3164-467b-93ee-89690b5ab6bf",
-                    "expectedControlType": "Pose",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "PinchGripIsTracked",
-                    "type": "Value",
-                    "id": "95eabb07-506c-46ae-8414-72d8dd0d5056",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "PinchGripTrackingState",
-                    "type": "Value",
-                    "id": "4ac5f4d8-4417-47c8-9e0a-e7efb02d5595",
-                    "expectedControlType": "Integer",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "PinchGripPosition",
-                    "type": "Value",
-                    "id": "f8fa2624-ffe3-450b-b961-dacd12abe91b",
+                    "id": "aa016bcd-24a3-44e5-bddf-44f908b7f793",
                     "expectedControlType": "Vector3",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "PinchGripRotation",
+                    "name": "PointerRotation",
                     "type": "Value",
-                    "id": "3d99abd0-1ace-442a-a168-261c12800719",
+                    "id": "9cdd0812-f4ce-4aac-b182-7930625c4d99",
                     "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "PinchGripStrength",
+                    "name": "GripPosition",
                     "type": "Value",
-                    "id": "9ecf9f1f-41a9-4081-8ac8-b321569e8a6d",
-                    "expectedControlType": "Analog",
+                    "id": "016fba43-5925-456c-a865-176f8fb04583",
+                    "expectedControlType": "Vector3",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "TrackerPrimaryButton",
-                    "type": "Button",
-                    "id": "63a5174a-4199-4dfb-abea-cbff941fb1ac",
-                    "expectedControlType": "Button",
+                    "name": "GripRotation",
+                    "type": "Value",
+                    "id": "6d9180b6-b425-44c5-a4df-fff615dbb37c",
+                    "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
-                    "name": "TrackerMenu",
-                    "type": "Button",
-                    "id": "056c5c79-de76-471c-8ed1-b2e7935082ee",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "TrackerPose",
+                    "name": "Haptic",
                     "type": "PassThrough",
-                    "id": "576957d5-7e52-43f4-9b2b-6b409f90de83",
-                    "expectedControlType": "Pose",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "TrackerTracked",
-                    "type": "Value",
-                    "id": "b379a167-57ab-4bf7-9a82-b1ee6614c34e",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "TrackerTrackingState",
-                    "type": "Value",
-                    "id": "2b81baa6-4a40-4078-876c-149d8bf87da6",
-                    "expectedControlType": "Integer",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "TriggerTouch",
-                    "type": "Button",
-                    "id": "e43fd4f9-8f68-485d-a7a3-081d8fa745a3",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "GripTouch",
-                    "type": "Button",
-                    "id": "41e28213-f06d-4361-bf18-ba15e189de5a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "ParkingTouch",
-                    "type": "Button",
-                    "id": "3db6b074-3acb-4c3f-bb16-11f8b9e38d37",
-                    "expectedControlType": "Button",
+                    "id": "76e395dd-d7df-4654-9787-fb936b50b7e5",
+                    "expectedControlType": "Haptic",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -337,7 +202,7 @@
                     "path": "<XRController>{LeftHand}/{triggerButton}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "TriggerPress",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -359,7 +224,7 @@
                     "path": "<XRController>{LeftHand}/{primaryButton}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "PrimaryButton",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -367,10 +232,10 @@
                 {
                     "name": "",
                     "id": "3dfde460-9bef-4bd9-943d-170adc171ff8",
-                    "path": "<XRController>{LeftHand}/{primaryTouch}",
+                    "path": "<XRController>{LeftHand}/{PrimaryTouch}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "PrimaryTouch",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -381,7 +246,7 @@
                     "path": "<XRController>{LeftHand}/menu",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -392,7 +257,7 @@
                     "path": "<XRController>{LeftHand}/system",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -403,7 +268,7 @@
                     "path": "<XRController>{LeftHand}/{primary2DAxis}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Primary2DAxis",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -414,7 +279,7 @@
                     "path": "<XRController>{LeftHand}/{primary2DAxisClick}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Primary2DAxisClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -425,7 +290,7 @@
                     "path": "<XRController>{LeftHand}/{primary2DAxisTouch}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Primary2DAxisTouch",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -436,7 +301,7 @@
                     "path": "<XRController>{LeftHand}/{secondary2DAxis}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Secondary2DAxis",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -447,7 +312,7 @@
                     "path": "<XRController>{LeftHand}/{secondary2DAxisClick}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Secondary2DAxisClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -458,7 +323,7 @@
                     "path": "<XRController>{LeftHand}/{secondary2DAxisTouch}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Secondary2DAxisTouch",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -469,7 +334,7 @@
                     "path": "<XRController>{LeftHand}/{grip}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Grip",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -480,7 +345,7 @@
                     "path": "<XRController>{LeftHand}/{gripButton}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "GripPress",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -491,7 +356,7 @@
                     "path": "<XRController>{LeftHand}/{secondaryButton}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "SecondaryButton",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -502,135 +367,36 @@
                     "path": "<XRController>{LeftHand}/{secondaryTouch}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "SecondaryTouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "4d8fde07-f5ac-4a1b-b3e9-783eccfc1d17",
-                    "path": "<XRController>{LeftHand}/isTracked",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "IsTracked",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cb1e1906-671b-49f8-9e1b-540c6caf0379",
-                    "path": "<ViveHandInteraction>{LeftHand}/selectValue",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PinchStrength",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3b835a88-b652-4a4d-ad97-7f5ec91f842c",
-                    "path": "<ViveWristTracker>{LeftHand}/primaryButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TrackerPrimaryButton",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "399543a2-be42-4909-a29a-8d01eb6cd818",
-                    "path": "<ViveHandInteraction>{LeftHand}/pointerPose",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PinchPose",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "dfe51db1-692c-49dc-b4a3-407b1ccf3fb3",
-                    "path": "<ViveWristTracker>{LeftHand}/devicePose",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TrackerPose",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "dc04bc6e-b1c6-4c13-9387-87acf6c2838d",
-                    "path": "<ViveWristTracker>{LeftHand}/menu",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TrackerMenu",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f676025c-f2bf-4a47-b3e4-ca55309a42c9",
-                    "path": "<ViveWristTracker>{LeftHand}/devicePose/isTracked",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TrackerTracked",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "134ee4a8-3562-4560-8003-ca3f9791d9e8",
-                    "path": "<XRController>{LeftHand}/trackingState",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TrackingState",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e7d358e0-d459-419e-9f0b-ac40b9fc48dc",
-                    "path": "<ViveWristTracker>{LeftHand}/devicePose/trackingState",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TrackerTrackingState",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a636ac70-9a4b-4ed7-b011-7bad0b77ac75",
+                    "id": "2e0bfaeb-6ce1-49fe-9fbe-69651c239f6c",
                     "path": "<XRController>{LeftHand}/pointerPosition",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "AimPosition",
+                    "groups": "XR Usage",
+                    "action": "PointerPosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "6ecaec07-8710-4084-94c5-efcc1f6a9dea",
+                    "id": "7eaabcc7-41cd-41fc-a31c-b35b4e61efd9",
                     "path": "<XRController>{LeftHand}/pointerRotation",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "AimRotation",
+                    "groups": "XR Usage",
+                    "action": "PointerRotation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "bbd741a2-a5d7-47ce-96d4-5f92cccdab35",
+                    "id": "b48c4a7b-44af-4134-abee-0c8bffd98460",
                     "path": "<XRController>{LeftHand}/devicePosition",
                     "interactions": "",
                     "processors": "",
@@ -641,100 +407,34 @@
                 },
                 {
                     "name": "",
-                    "id": "6ffba069-2076-48e0-b33b-bab9598844da",
+                    "id": "e95798de-27b1-4590-aa5e-2cbad92c1f5d",
                     "path": "<XRController>{LeftHand}/deviceRotation",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "GripRotation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "eb10cbdb-a9e7-4bec-b76c-1718f456ac14",
-                    "path": "<XRController>{LeftHand}/triggerTouched",
+                    "id": "5e867cab-2f35-436f-9c34-174590993836",
+                    "path": "<XRController>{LeftHand}/haptic",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
+                    "action": "Haptic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3f243be3-e480-4940-a463-a54e7b15a876",
+                    "path": "<XRController>{LeftHand}/{TriggerTouch}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Usage",
                     "action": "TriggerTouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0b8dc98e-0f18-4c7b-a4b8-de36efda183a",
-                    "path": "<XRController>{LeftHand}/gripTouched",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "GripTouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4a34abeb-b57c-4bef-8b3d-9b845377c543",
-                    "path": "<XRController>{LeftHand}/parkingTouched",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ParkingTouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1c9e4cce-d602-410d-84ee-89cd4c31297d",
-                    "path": "<ViveHandInteraction>{LeftHand}/devicePosition",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PinchGripPosition",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "668cc891-0715-4ec8-967e-93b9380e7ffe",
-                    "path": "<ViveHandInteraction>{LeftHand}/gripValue",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PinchGripStrength",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "57cd85e4-bc88-4c76-bfe8-3263a6fcd1ea",
-                    "path": "<ViveHandInteraction>{LeftHand}/deviceRotation",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PinchGripRotation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d4611d3c-02c6-42bb-a69b-09ee2dd86aae",
-                    "path": "<ViveHandInteraction>{LeftHand}/trackingState",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PinchGripTrackingState",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bad51413-32e9-480e-a371-64539c613f6a",
-                    "path": "<ViveHandInteraction>{LeftHand}/isTracked",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PinchGripIsTracked",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -748,6 +448,15 @@
                     "name": "TriggerPress",
                     "type": "Button",
                     "id": "bc163c5e-01a5-48ae-83b3-87e68f24f888",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TriggerTouch",
+                    "type": "Button",
+                    "id": "60ad2555-a98c-4a74-abff-e47e7ac034af",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -880,144 +589,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "IsTracked",
+                    "name": "PointerPosition",
                     "type": "Value",
-                    "id": "d1478f77-9424-45e1-bbe0-949fcfaec599",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "TrackingState",
-                    "type": "Value",
-                    "id": "c13385e1-8194-4e1b-87a8-076ae733a2f4",
-                    "expectedControlType": "Integer",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "PinchStrength",
-                    "type": "Value",
-                    "id": "ad138355-d99b-4614-a881-6422986ab4ea",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "PinchPose",
-                    "type": "PassThrough",
-                    "id": "614a15a0-5f44-4110-a387-352976113b58",
-                    "expectedControlType": "Pose",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "PinchGripIsTracked",
-                    "type": "Value",
-                    "id": "2a28f08b-a612-4137-a10f-ba2afb4c180b",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "PinchGripTrackingState",
-                    "type": "Value",
-                    "id": "61206512-f25e-4ce5-98c1-ec8942769bc1",
-                    "expectedControlType": "Integer",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "PinchGripPosition",
-                    "type": "Value",
-                    "id": "093bd854-f03e-4208-8e67-77de1ea258e6",
+                    "id": "dfe9bf01-d1b6-4869-947f-775e28857768",
                     "expectedControlType": "Vector3",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "PinchGripRotation",
+                    "name": "PointerRotation",
                     "type": "Value",
-                    "id": "d7921a48-e5cb-41a2-9dfb-86ced095dfe8",
-                    "expectedControlType": "Quaternion",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "PinchGripStrength",
-                    "type": "Value",
-                    "id": "22fb6efb-6d9f-4ff9-95dc-fc3c7f44bd62",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "TrackerPrimaryButton",
-                    "type": "Button",
-                    "id": "05fe7922-a759-4f42-9c2c-caff14d10aa9",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "TrackerMenu",
-                    "type": "Button",
-                    "id": "a07d4b52-3b1b-4ef4-b6d3-8ae87eb03acd",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "TrackerPose",
-                    "type": "PassThrough",
-                    "id": "f393e45c-19c4-41fa-af6f-8a2bbc947e79",
-                    "expectedControlType": "Pose",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "TrackerTracked",
-                    "type": "Value",
-                    "id": "c7517ed7-5bd2-4e77-8f35-3df9a75a4ac7",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "TrackerTrackingState",
-                    "type": "Value",
-                    "id": "28320227-ce5d-4c22-8088-07c90ee2cba2",
-                    "expectedControlType": "Integer",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "AimPosition",
-                    "type": "Value",
-                    "id": "cdabdfa9-be08-4d02-a187-8ca7fb8de227",
-                    "expectedControlType": "Vector3",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "AimRotation",
-                    "type": "Value",
-                    "id": "9f9a934e-d0b6-4c5c-b6bc-56337dc99526",
+                    "id": "6af87a70-4748-417c-a266-b6651d3617cf",
                     "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": "",
@@ -1026,7 +609,7 @@
                 {
                     "name": "GripPosition",
                     "type": "Value",
-                    "id": "837402e0-0d1e-4c9c-9615-54d04b0f4e22",
+                    "id": "9715692b-ec5b-4264-9731-c02780e67179",
                     "expectedControlType": "Vector3",
                     "processors": "",
                     "interactions": "",
@@ -1035,35 +618,17 @@
                 {
                     "name": "GripRotation",
                     "type": "Value",
-                    "id": "56691437-e5af-49dd-81ba-54b81e452dd1",
+                    "id": "a6f17fc0-706e-459c-9915-2064d4928217",
                     "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "TriggerTouch",
-                    "type": "Button",
-                    "id": "9f8d7577-92b6-47e1-9843-4022bb3c83bb",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "GripTouch",
-                    "type": "Button",
-                    "id": "9dcce14b-8a93-4e8b-b15b-cc009a5ee6a0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "ParkingTouch",
-                    "type": "Button",
-                    "id": "a3de7c95-047b-4186-ba20-3006516afbd4",
-                    "expectedControlType": "Button",
+                    "name": "Haptic",
+                    "type": "PassThrough",
+                    "id": "d58abe56-873a-44a7-93b1-40630a1829dd",
+                    "expectedControlType": "Haptic",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -1076,7 +641,7 @@
                     "path": "<XRController>{RightHand}/{triggerButton}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "TriggerPress",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1087,7 +652,7 @@
                     "path": "<XRController>{RightHand}/{trigger}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Trigger",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1098,7 +663,7 @@
                     "path": "<XRController>{RightHand}/{primaryButton}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "PrimaryButton",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1106,10 +671,10 @@
                 {
                     "name": "",
                     "id": "0657f0e8-4c3b-45d4-a00b-fda175a6684d",
-                    "path": "<XRController>{RightHand}/{primaryTouch}",
+                    "path": "<XRController>{RightHand}/{PrimaryTouch}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "PrimaryTouch",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1120,7 +685,7 @@
                     "path": "<XRController>{RightHand}/menu",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1131,7 +696,7 @@
                     "path": "<XRController>{RightHand}/system",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1142,7 +707,7 @@
                     "path": "<XRController>{RightHand}/{primary2DAxis}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Primary2DAxis",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1153,7 +718,7 @@
                     "path": "<XRController>{RightHand}/{primary2DAxisClick}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Primary2DAxisClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1164,7 +729,7 @@
                     "path": "<XRController>{RightHand}/{primary2DAxisTouch}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Primary2DAxisTouch",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1175,7 +740,7 @@
                     "path": "<XRController>{RightHand}/{secondary2DAxis}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Secondary2DAxis",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1186,7 +751,7 @@
                     "path": "<XRController>{RightHand}/{secondary2DAxisClick}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Secondary2DAxisClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1197,7 +762,7 @@
                     "path": "<XRController>{RightHand}/{secondary2DAxisTouch}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Secondary2DAxisTouch",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1208,7 +773,7 @@
                     "path": "<XRController>{RightHand}/{grip}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "Grip",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1219,7 +784,7 @@
                     "path": "<XRController>{RightHand}/{gripButton}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "GripPress",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1230,7 +795,7 @@
                     "path": "<XRController>{RightHand}/{secondaryButton}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "SecondaryButton",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1241,36 +806,241 @@
                     "path": "<XRController>{RightHand}/{secondaryTouch}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "SecondaryTouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "c4a8f0e5-31fc-40a3-9495-525e04a99fcc",
-                    "path": "<XRController>{RightHand}/isTracked",
+                    "id": "977795e1-ef6f-426e-858e-b7b8151f3155",
+                    "path": "<XRController>{RightHand}/devicePosition",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "IsTracked",
+                    "groups": "XR Usage",
+                    "action": "GripPosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "a50c774b-47a3-4c8f-bd81-3be97f7648b5",
-                    "path": "<ViveHandInteraction>{RightHand}/selectValue",
+                    "id": "ba89ffae-14bc-4a81-944e-ca0649618084",
+                    "path": "<XRController>{RightHand}/pointerRotation",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "PinchStrength",
+                    "groups": "XR Usage",
+                    "action": "PointerRotation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "dfb2da3b-f6db-4113-b401-4dfec601a58f",
+                    "id": "adfd3ab1-a822-4dea-9d94-e110b2cdaa99",
+                    "path": "<XRController>{RightHand}/pointerPosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Usage",
+                    "action": "PointerPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1d456cea-e5d1-4181-9d80-a876eb828922",
+                    "path": "<XRController>{RightHand}/haptic",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Usage",
+                    "action": "Haptic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b661f593-2a31-4709-af51-f7766d7216df",
+                    "path": "<XRController>{RightHand}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Usage",
+                    "action": "GripRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0868663a-e765-4152-b75b-c11c3430588e",
+                    "path": "<XRController>{RightHand}/{TriggerTouch}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Usage",
+                    "action": "TriggerTouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "LeftWristTracker",
+            "id": "54686183-0eef-4de3-98ac-7e05c12482a3",
+            "actions": [
+                {
+                    "name": "TrackerPrimaryButton",
+                    "type": "Button",
+                    "id": "1572046a-61c5-476a-8608-572cd77bc973",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrackerMenu",
+                    "type": "Button",
+                    "id": "55593c22-34cc-4667-bc2e-3b5faf9bd92f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrackerPose",
+                    "type": "PassThrough",
+                    "id": "d540d206-3ae8-47ac-b9b1-31590876172e",
+                    "expectedControlType": "Pose",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrackerTracked",
+                    "type": "Value",
+                    "id": "406c5bd1-2067-4dbd-80d5-26a5e9a65579",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "TrackerTrackingState",
+                    "type": "Value",
+                    "id": "9d7957b5-47c6-4c19-8a41-77fa7326777f",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ebfe86eb-9cca-40d5-850d-c60118c16585",
+                    "path": "<ViveWristTracker>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TrackerPrimaryButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba87453e-7937-4722-80a8-937c50a1ad6b",
+                    "path": "<ViveWristTracker>{LeftHand}/devicePose",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TrackerPose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ad0d6b67-db55-445a-a018-559d4a653f61",
+                    "path": "<ViveWristTracker>{LeftHand}/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TrackerMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7261d32a-e658-4c87-ac39-41bfdc87b820",
+                    "path": "<ViveWristTracker>{LeftHand}/devicePose/isTracked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TrackerTracked",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8958258e-7f65-471c-af1f-d82eda901b62",
+                    "path": "<ViveWristTracker>{LeftHand}/devicePose/trackingState",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TrackerTrackingState",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "RightWristTracker",
+            "id": "50800993-be18-484b-ba92-e4a322baf617",
+            "actions": [
+                {
+                    "name": "TrackerPrimaryButton",
+                    "type": "Button",
+                    "id": "ef03142a-daec-4372-be0d-8b62ef52f807",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrackerMenu",
+                    "type": "Button",
+                    "id": "efabb569-3932-4605-8bc4-6105f77a3d90",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrackerPose",
+                    "type": "PassThrough",
+                    "id": "e11cedbe-1f27-468d-b868-e25d98dbaf87",
+                    "expectedControlType": "Pose",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrackerTracked",
+                    "type": "Value",
+                    "id": "342e069c-db4f-4c3b-b536-205f7d0510ab",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "TrackerTrackingState",
+                    "type": "Value",
+                    "id": "dd5fc776-5139-4454-8ad0-52d8d4e1d47f",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2b819dfe-33cb-4953-95fb-300e3cd453b8",
                     "path": "<ViveWristTracker>{RightHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
@@ -1281,18 +1051,7 @@
                 },
                 {
                     "name": "",
-                    "id": "8a056d88-44d0-4fff-acd7-74a3c5d73801",
-                    "path": "<ViveHandInteraction>{RightHand}/pointerPose",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PinchPose",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "857a4b86-52d9-4b2d-a7bb-0b9564499a0b",
+                    "id": "81cff93a-5b3b-4b79-b242-e2dc8306468c",
                     "path": "<ViveWristTracker>{RightHand}/devicePose",
                     "interactions": "",
                     "processors": "",
@@ -1303,7 +1062,7 @@
                 },
                 {
                     "name": "",
-                    "id": "bcb085ed-72dd-4355-8ead-e4b93824a209",
+                    "id": "ab9a4dbd-2708-4db7-800f-c4973cb35eca",
                     "path": "<ViveWristTracker>{RightHand}/menu",
                     "interactions": "",
                     "processors": "",
@@ -1314,7 +1073,7 @@
                 },
                 {
                     "name": "",
-                    "id": "f8dd3cd7-a078-4e5d-9fcb-78b350bf1f86",
+                    "id": "cbed8e90-f977-4aa8-9167-fc8cd409a9ce",
                     "path": "<ViveWristTracker>{RightHand}/devicePose/isTracked",
                     "interactions": "",
                     "processors": "",
@@ -1325,155 +1084,12 @@
                 },
                 {
                     "name": "",
-                    "id": "4b7dac17-1c8c-4ccd-ac11-820507868aa4",
-                    "path": "<XRController>{RightHand}/trackingState",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TrackingState",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "39e3714b-8946-4226-9713-cb1b4b342825",
+                    "id": "928c3221-26fa-40ea-b0a7-76df6a341b28",
                     "path": "<ViveWristTracker>{RightHand}/devicePose/trackingState",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "TrackerTrackingState",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3a41f98b-66f3-4d43-b8fd-38060154a5b8",
-                    "path": "<XRController>{RightHand}/pointerPosition",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AimPosition",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "32216a56-efd4-40cf-8456-48a3de785bf0",
-                    "path": "<XRController>{RightHand}/pointerRotation",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AimRotation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5aaec621-392f-4e7f-ab25-0fb8aa96efa5",
-                    "path": "<XRController>{RightHand}/devicePosition",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "GripPosition",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "750b0360-40ef-4754-9800-75b37ba95f52",
-                    "path": "<XRController>{RightHand}/deviceRotation",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "GripRotation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f32db05c-c036-499e-9e7c-d7a3634024c8",
-                    "path": "<XRController>{RightHand}/triggerTouched",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TriggerTouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "48259e5f-8707-404d-a2f4-3f59909928f3",
-                    "path": "<XRController>{RightHand}/gripTouched",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "GripTouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "406f7078-592d-449c-88ed-231dbeb70f37",
-                    "path": "<XRController>{RightHand}/parkingTouched",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ParkingTouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7bf75154-0ff3-47fc-9d00-d53305db28cc",
-                    "path": "<ViveHandInteraction>{RightHand}/devicePosition",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PinchGripPosition",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "9049c343-54da-4ef3-a7c9-36b97f4b6f61",
-                    "path": "<ViveHandInteraction>{RightHand}/gripValue",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PinchGripStrength",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5d9eb752-27f1-4118-8e1e-03a3203b3f94",
-                    "path": "<ViveHandInteraction>{RightHand}/deviceRotation",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PinchGripRotation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "12f62769-2c40-43b4-9a3c-cdd3f187af68",
-                    "path": "<ViveHandInteraction>{RightHand}/trackingState",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PinchGripTrackingState",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "fab9f339-afa4-42ce-8fb6-e474b4255d92",
-                    "path": "<ViveHandInteraction>{RightHand}/isTracked",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PinchGripIsTracked",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1500,15 +1116,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "eyePose",
-                    "type": "PassThrough",
-                    "id": "548c3f06-0eab-482f-b591-af50014a563e",
-                    "expectedControlType": "Pose",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1533,17 +1140,6 @@
                     "action": "hmdRotation",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8b58750f-bfb3-41d4-8dc5-77baabfc7475",
-                    "path": "<EyeGaze>/pose",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "eyePose",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         },
@@ -1553,7 +1149,7 @@
             "actions": [
                 {
                     "name": "Click",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "7d87f920-38ab-4a79-9716-27722a02c594",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -1577,15 +1173,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Down",
-                    "type": "Value",
-                    "id": "8f2c28d0-e5c0-4919-9514-8b8509e0e33a",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -1606,7 +1193,7 @@
                     "path": "<XRController>/pointerPosition",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "pointerPosition",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1617,68 +1204,89 @@
                     "path": "<XRController>/pointerRotation",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "XR Usage",
                     "action": "pointerRotation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3144164d-3ee1-49fb-a712-103e65fb08e1",
-                    "path": "<XRController>/trigger",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Down",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]
         },
         {
-            "name": "XRTracker",
-            "id": "a3934b2a-22e9-4ac1-adf5-2444010a08d2",
+            "name": "EyeGaze",
+            "id": "778a6cd3-d8ad-48bb-b2d5-f0031897ee40",
+            "actions": [
+                {
+                    "name": "Tracked",
+                    "type": "Button",
+                    "id": "2a7ee830-cd9a-420a-84fd-c4ac3085124a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "EyePosition",
+                    "type": "Value",
+                    "id": "e63213e0-8347-4e96-a93a-d08ad27a54bb",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "EyeRotation",
+                    "type": "Value",
+                    "id": "ded73c9a-53b1-4fb9-b8c6-f07836892911",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3bc6e35a-60c4-42b0-8b0d-710ca8f43396",
+                    "path": "<EyeGaze>/pose/isTracked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Usage",
+                    "action": "Tracked",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3f2a24e8-ffbe-418c-81ca-3eaa0fcae0f8",
+                    "path": "<EyeGaze>/pose/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Usage",
+                    "action": "EyePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "053ced48-4160-4b64-b256-fec4e0dd175c",
+                    "path": "<EyeGaze>/pose/rotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR Usage",
+                    "action": "EyeRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "XRTracker0",
+            "id": "d725dcb9-93cf-4c52-ba21-4023bc11f09c",
             "actions": [
                 {
                     "name": "UltimateTrackerIsTracked0",
                     "type": "Value",
-                    "id": "e8fb14bc-bd2a-4eb9-b8d8-5f6b813c9f0a",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerIsTracked1",
-                    "type": "Value",
-                    "id": "91336d1c-a431-40bb-bbfd-7a1b8a4439fb",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerIsTracked2",
-                    "type": "Value",
-                    "id": "05721cdc-eb09-4789-993c-ba2d17cb8998",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerIsTracked3",
-                    "type": "Value",
-                    "id": "fa23237f-52a4-4a2c-bdce-04dee5a58ebc",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerIsTracked4",
-                    "type": "Value",
-                    "id": "2d850360-9e9c-4ca7-adf4-4f2dc68c9cc9",
+                    "id": "c435b338-75ce-4dff-98cf-d98168554a01",
                     "expectedControlType": "Analog",
                     "processors": "",
                     "interactions": "",
@@ -1687,43 +1295,7 @@
                 {
                     "name": "UltimateTrackerTrackingState0",
                     "type": "Value",
-                    "id": "efa29899-276e-45f4-bad1-d32ba46a0368",
-                    "expectedControlType": "Integer",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerTrackingState1",
-                    "type": "Value",
-                    "id": "6ccc130c-ccd5-44ab-ad8b-e69ed795a864",
-                    "expectedControlType": "Integer",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerTrackingState2",
-                    "type": "Value",
-                    "id": "6f96df7e-bb24-4161-80a1-49974de0d43b",
-                    "expectedControlType": "Integer",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerTrackingState3",
-                    "type": "Value",
-                    "id": "bae3a2bc-3bcb-478c-8d21-436c23241d3c",
-                    "expectedControlType": "Integer",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerTrackingState4",
-                    "type": "Value",
-                    "id": "4869ba90-8e08-48f7-9ac2-e17ad338c60f",
+                    "id": "ba506982-1729-426c-9bd8-2f0d4523c2b5",
                     "expectedControlType": "Integer",
                     "processors": "",
                     "interactions": "",
@@ -1732,43 +1304,7 @@
                 {
                     "name": "UltimateTrackerPosition0",
                     "type": "Value",
-                    "id": "1f84e0f5-f336-43c4-b6fa-b61e9feed5e4",
-                    "expectedControlType": "Vector3",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerPosition1",
-                    "type": "Value",
-                    "id": "e3464bb9-6b24-4d7c-9e2d-ea6c436592f7",
-                    "expectedControlType": "Vector3",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerPosition2",
-                    "type": "Value",
-                    "id": "970672d3-acf5-4812-977e-8c824f912464",
-                    "expectedControlType": "Vector3",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerPosition3",
-                    "type": "Value",
-                    "id": "3a167fad-2d5a-48d3-8218-e00a39603064",
-                    "expectedControlType": "Vector3",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerPosition4",
-                    "type": "Value",
-                    "id": "a865432e-875d-4e2e-9947-bfe06e576110",
+                    "id": "aa74d5d6-db6b-44cd-ac4b-a3591067e7e6",
                     "expectedControlType": "Vector3",
                     "processors": "",
                     "interactions": "",
@@ -1777,43 +1313,7 @@
                 {
                     "name": "UltimateTrackerRotation0",
                     "type": "Value",
-                    "id": "654b29c9-420a-46f7-8194-eb000eef7e4c",
-                    "expectedControlType": "Quaternion",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerRotation1",
-                    "type": "Value",
-                    "id": "4c1f3249-53e8-479e-a381-912b2a551ac7",
-                    "expectedControlType": "Quaternion",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerRotation2",
-                    "type": "Value",
-                    "id": "8b5e3d55-7a63-402d-b04d-fd41f7c691f7",
-                    "expectedControlType": "Quaternion",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerRotation3",
-                    "type": "Value",
-                    "id": "c09646f8-5b6d-4bd1-8446-9b908300b32a",
-                    "expectedControlType": "Quaternion",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerRotation4",
-                    "type": "Value",
-                    "id": "dd85844a-59f0-4ce4-a204-6f86d8703492",
+                    "id": "8a28446d-c417-473a-90d2-ec88bdbd3e3b",
                     "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": "",
@@ -1822,43 +1322,7 @@
                 {
                     "name": "UltimateTrackerMenu0",
                     "type": "Value",
-                    "id": "8f77f896-5a64-4d49-ad7b-eaae27c2f6f0",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerMenu1",
-                    "type": "Value",
-                    "id": "335a3b8f-f2db-4407-bfc0-da7f2fa3df67",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerMenu2",
-                    "type": "Value",
-                    "id": "d00902cb-dd6e-4cc1-b9e6-458620d7cc54",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerMenu3",
-                    "type": "Value",
-                    "id": "e65b347f-7c86-4c2c-9fa7-6cb8a98396bb",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerMenu4",
-                    "type": "Value",
-                    "id": "32290454-3d49-4abe-8e96-5ea4be4b98b7",
+                    "id": "739fe272-763b-46ec-b3b4-9855e99579ea",
                     "expectedControlType": "Analog",
                     "processors": "",
                     "interactions": "",
@@ -1867,43 +1331,7 @@
                 {
                     "name": "UltimateTrackerGripPress0",
                     "type": "Value",
-                    "id": "b799c225-3106-430b-a52f-423665a86de6",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerGripPress1",
-                    "type": "Value",
-                    "id": "b5df54f8-713d-4334-86c3-06d30ddf1cf7",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerGripPress2",
-                    "type": "Value",
-                    "id": "1b759bf8-9d5b-4b49-8316-ddfaf8fc68ec",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerGripPress3",
-                    "type": "Value",
-                    "id": "40f863d6-48ec-4367-bb85-4c62262d0aea",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerGripPress4",
-                    "type": "Value",
-                    "id": "d50f398e-1f91-472e-953c-eb0f624f0e1a",
+                    "id": "7de92744-07f7-4aa9-a749-930e46a4dd83",
                     "expectedControlType": "Analog",
                     "processors": "",
                     "interactions": "",
@@ -1912,43 +1340,7 @@
                 {
                     "name": "UltimateTrackerTriggerPress0",
                     "type": "Value",
-                    "id": "c6435c4b-ab53-4cc1-a945-a720ae99d8ca",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerTriggerPress1",
-                    "type": "Value",
-                    "id": "1229385c-e160-496c-973f-1423c7dde8a8",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerTriggerPress2",
-                    "type": "Value",
-                    "id": "15e5038f-f4ad-4e1a-b512-62d7dc4f39ae",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerTriggerPress3",
-                    "type": "Value",
-                    "id": "62b71c61-288c-4cc4-b78c-4de93d6206ce",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerTriggerPress4",
-                    "type": "Value",
-                    "id": "2f36800f-6190-430d-bc37-54bc6dcaae89",
+                    "id": "30a772ea-a7c8-45a7-99f9-c66d22049cfd",
                     "expectedControlType": "Analog",
                     "processors": "",
                     "interactions": "",
@@ -1957,43 +1349,7 @@
                 {
                     "name": "UltimateTrackerTrackpadPress0",
                     "type": "Value",
-                    "id": "b393b33c-c624-496f-b087-68a407d8dc3d",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerTrackpadPress1",
-                    "type": "Value",
-                    "id": "549461b6-6064-422b-8c9d-87d57129c8f5",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerTrackpadPress2",
-                    "type": "Value",
-                    "id": "4bcb74b3-99f9-4b81-817e-805ac4675e32",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerTrackpadPress3",
-                    "type": "Value",
-                    "id": "a6553326-7a96-4a7a-958e-e670749fef33",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerTrackpadPress4",
-                    "type": "Value",
-                    "id": "23554d75-900e-4a22-bb1a-c04cc2a78f27",
+                    "id": "b272551e-2bf8-4b31-97e3-cb2f1bfc50a1",
                     "expectedControlType": "Analog",
                     "processors": "",
                     "interactions": "",
@@ -2002,43 +1358,7 @@
                 {
                     "name": "UltimateTrackerTrackpadTouch0",
                     "type": "Value",
-                    "id": "41f153d7-9dc6-48b4-bb62-076e5b46a740",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerTrackpadTouch1",
-                    "type": "Value",
-                    "id": "a045f5d5-b5c5-4c56-93f5-0311b25bcd32",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerTrackpadTouch2",
-                    "type": "Value",
-                    "id": "b675bf25-23fa-4f40-886e-fb326b157bd6",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerTrackpadTouch3",
-                    "type": "Value",
-                    "id": "f696b7b9-41e4-4995-9294-36ed4e7a2153",
-                    "expectedControlType": "Analog",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "UltimateTrackerTrackpadTouch4",
-                    "type": "Value",
-                    "id": "15f5f500-391b-4f84-a26f-a1c32aa3cc7b",
+                    "id": "50299bbf-efac-42a4-9aef-e9ec3cf3ee3e",
                     "expectedControlType": "Analog",
                     "processors": "",
                     "interactions": "",
@@ -2048,7 +1368,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "68a2aa5b-0a25-4b2f-94bc-81b14e331f0c",
+                    "id": "1049750c-49e8-4971-8c83-b57ec65cd5b3",
                     "path": "<ViveXRTracker>{Ultimate Tracker 0}/isTracked",
                     "interactions": "",
                     "processors": "",
@@ -2059,51 +1379,7 @@
                 },
                 {
                     "name": "",
-                    "id": "4221dc5e-541a-4dad-9bc8-3a0e6224fbda",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 1}/isTracked",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerIsTracked1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "91b6fa8c-dd62-4705-a691-2fa0d396ab01",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 2}/isTracked",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerIsTracked2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "9ea8fd43-0d92-4830-89fb-4d92fdce420d",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 3}/isTracked",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerIsTracked3",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4c1ad520-b2ed-4e44-a4ff-11d1adc578d7",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 4}/isTracked",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerIsTracked4",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5c976786-851c-43d0-b7ba-f0c765d4f7f0",
+                    "id": "24964785-d398-42ee-9a12-e96623287ef7",
                     "path": "<ViveXRTracker>{Ultimate Tracker 0}/trackingState",
                     "interactions": "",
                     "processors": "",
@@ -2114,51 +1390,7 @@
                 },
                 {
                     "name": "",
-                    "id": "eacf509c-9b24-4178-8dd5-88924973ee50",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 1}/trackingState",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerTrackingState1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a6851e6f-b001-4a44-9d91-1238c509e92e",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 2}/trackingState",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerTrackingState2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7cd38fe1-8d48-4a42-bcd0-1bd13a1351e6",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 3}/trackingState",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerTrackingState3",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "180e3750-8b45-4f39-b586-171076f90507",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 4}/trackingState",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerTrackingState4",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3cd46c97-a668-4ab6-b747-2a664cb144d7",
+                    "id": "5c5552a6-ee45-42af-887e-1ea14a758389",
                     "path": "<ViveXRTracker>{Ultimate Tracker 0}/devicePosition",
                     "interactions": "",
                     "processors": "",
@@ -2169,51 +1401,7 @@
                 },
                 {
                     "name": "",
-                    "id": "48a438e1-c0e4-4087-aea2-b1900896e2cb",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 1}/devicePosition",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerPosition1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b5b8bad8-26d8-497b-adce-26d3fdd17afe",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 2}/devicePosition",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerPosition2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "9f7ec0df-3dd6-4f79-82d1-1ca8bf8ec49c",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 3}/devicePosition",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerPosition3",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "29e32062-4f12-450b-9feb-2ee58f364cea",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 4}/devicePosition",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerPosition4",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6fa434d7-6ddf-41f2-a566-df291b1436f5",
+                    "id": "c029a535-b048-4180-8563-3570ea8c3eea",
                     "path": "<ViveXRTracker>{Ultimate Tracker 0}/deviceRotation",
                     "interactions": "",
                     "processors": "",
@@ -2224,51 +1412,7 @@
                 },
                 {
                     "name": "",
-                    "id": "eead5a12-fe83-4a68-a57e-31c72b85f721",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 1}/deviceRotation",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerRotation1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e96bd289-8b24-4463-abe3-f22c532a8903",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 2}/deviceRotation",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerRotation2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "19aa05c9-678d-456b-87d1-8a135b96f381",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 3}/deviceRotation",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerRotation3",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "85a5100c-f9a3-47ee-950b-5c9dde6e1f3c",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 4}/deviceRotation",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerRotation4",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "31a54eba-9c9e-4128-aa94-0e5efda8dc78",
+                    "id": "d9ba34d8-b9ca-4acf-acea-73f7a1c3ad41",
                     "path": "<ViveXRTracker>{Ultimate Tracker 0}/menu",
                     "interactions": "",
                     "processors": "",
@@ -2279,51 +1423,7 @@
                 },
                 {
                     "name": "",
-                    "id": "8727aa5e-0f42-49e6-a50e-8e11cfaa9640",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 1}/menu",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerMenu1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "64c8b951-e1b6-4be6-8c66-3cac332afbe2",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 2}/menu",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerMenu2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8c663aa0-8fb8-4df2-9da8-fa6264efad2c",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 3}/menu",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerMenu3",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "96450792-f437-4c33-a6e8-5119f71c4549",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 4}/menu",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerMenu4",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "105b83d8-c313-4850-8199-1ccf8ea905b8",
+                    "id": "00a33898-32dd-41a0-a05a-3cc215cb601f",
                     "path": "<ViveXRTracker>{Ultimate Tracker 0}/gripPress",
                     "interactions": "",
                     "processors": "",
@@ -2334,51 +1434,7 @@
                 },
                 {
                     "name": "",
-                    "id": "b5a417c5-f0b1-4809-becb-84c2f2c53046",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 1}/gripPress",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerGripPress1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "98fde81d-1b07-4584-9eff-c2bb25e352f9",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 2}/gripPress",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerGripPress2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4285ce46-ba55-4a5f-8b20-e7bac73f89ef",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 3}/gripPress",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerGripPress3",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7b69edc9-3b89-4c4c-8c97-a5c025278693",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 4}/gripPress",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerGripPress4",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "743cbb38-1468-4bfa-8d1d-cdb2294d5a72",
+                    "id": "049f438f-a51e-4181-8695-1006c75fe4b1",
                     "path": "<ViveXRTracker>{Ultimate Tracker 0}/triggerPress",
                     "interactions": "",
                     "processors": "",
@@ -2389,73 +1445,7 @@
                 },
                 {
                     "name": "",
-                    "id": "292c4f1d-dfe0-4dbc-bfb2-eb5575594de4",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 1}/triggerPress",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerTriggerPress1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2ddca843-64ec-421e-8aff-d8f78f57bebd",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 2}/triggerPress",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerTriggerPress2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "78646995-4899-4558-9a1f-1979068f829a",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 3}/triggerPress",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerTriggerPress3",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4c12f924-33a9-42e8-90a0-f51f3ec91fff",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 1}/trackpadPress",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerTrackpadPress1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1d6080d2-c0fb-42cf-ae57-ae70df3ee57b",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 2}/trackpadPress",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerTrackpadPress2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2b20ef86-f77d-4085-a887-3291d20bab51",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 3}/trackpadPress",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerTrackpadPress3",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "dc9d8be0-fed5-4f9a-9114-edb138d3a1d8",
+                    "id": "cc263518-518a-4c0f-a879-a583b644459d",
                     "path": "<ViveXRTracker>{Ultimate Tracker 0}/trackpadTouch",
                     "interactions": "",
                     "processors": "",
@@ -2466,7 +1456,195 @@
                 },
                 {
                     "name": "",
-                    "id": "972cdde2-fb30-4e8c-9587-f708b1aa3b5f",
+                    "id": "f3b57b68-31c0-4018-abe2-c7d4169e8a98",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 0}/trackpadPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerTrackpadPress0",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "XRTracker1",
+            "id": "d18aec0f-ebda-40c4-ad82-0bc69b3151d0",
+            "actions": [
+                {
+                    "name": "UltimateTrackerIsTracked1",
+                    "type": "Value",
+                    "id": "12eeb734-2fa1-422a-93f8-4bb92d3a12e2",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerTrackingState1",
+                    "type": "Value",
+                    "id": "71991622-8c67-4d61-805a-272e67728977",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerPosition1",
+                    "type": "Value",
+                    "id": "a873f8b6-faaa-40af-8804-46515ccae49d",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerRotation1",
+                    "type": "Value",
+                    "id": "bbabde5c-d5c2-48a2-b060-56cc577ef1a1",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerMenu1",
+                    "type": "Value",
+                    "id": "6c5f483f-63b3-47c0-bcec-c51c4d0b61ab",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerGripPress1",
+                    "type": "Value",
+                    "id": "011b915a-b5d0-439e-9a93-7c4a6e4388c4",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerTriggerPress1",
+                    "type": "Value",
+                    "id": "c171e979-d622-44c3-bd9e-ef8fa38b40e0",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerTrackpadPress1",
+                    "type": "Value",
+                    "id": "2b7cf319-a91f-4134-8804-0ec93719d8b7",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerTrackpadTouch1",
+                    "type": "Value",
+                    "id": "8c599dfd-bed4-4f19-89eb-93d466d57907",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "479f90aa-8a90-4b3f-8669-1b27f368a297",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 1}/isTracked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerIsTracked1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9ae428f5-771e-4a1e-9941-1894ab67de81",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 1}/trackingState",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerTrackingState1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d8e6fc30-3dbb-4647-bf8b-f7dbccf20c20",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 1}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerPosition1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "49da0174-f357-4fa3-8652-8029173aea46",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 1}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerRotation1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "838e61d8-25b0-4349-b68d-f2d5ffd2348f",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 1}/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerMenu1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "89ecce2d-f55e-4e74-b42b-56e9ffdd1531",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 1}/gripPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerGripPress1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c42576b-ab41-4137-8808-7d5bb44d66c0",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 1}/triggerPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerTriggerPress1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7f0c754a-7680-44ef-bf29-3db7f9fbad5e",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 1}/trackpadPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerTrackpadPress1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cb30ad1e-4d56-4037-9fc9-3f8d8a8100b9",
                     "path": "<ViveXRTracker>{Ultimate Tracker 1}/trackpadTouch",
                     "interactions": "",
                     "processors": "",
@@ -2474,10 +1652,187 @@
                     "action": "UltimateTrackerTrackpadTouch1",
                     "isComposite": false,
                     "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "XRTracker2",
+            "id": "e2801d8d-e44a-4d51-b63f-9f38b02ec713",
+            "actions": [
+                {
+                    "name": "UltimateTrackerIsTracked2",
+                    "type": "Value",
+                    "id": "a102f790-474d-4d3b-8d4d-2f3d86e889a9",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerTrackingState2",
+                    "type": "Value",
+                    "id": "c48d58c8-e326-41d8-aef0-2740a80d4d14",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerPosition2",
+                    "type": "Value",
+                    "id": "299559db-b01c-4eba-acbc-c76e25b1b059",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerRotation2",
+                    "type": "Value",
+                    "id": "68ca0c6c-0210-46a6-9d6f-d49de6a20dac",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerMenu2",
+                    "type": "Value",
+                    "id": "cf5b664d-426e-4d37-b2f6-39be2f6e9867",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerGripPress2",
+                    "type": "Value",
+                    "id": "14c7e7a3-51a2-48f0-9200-afc26a2e97ba",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerTriggerPress2",
+                    "type": "Value",
+                    "id": "971bcd8e-b88f-4b87-aa54-86acd577fcd1",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerTrackpadPress2",
+                    "type": "Value",
+                    "id": "4c2d4fbf-e6aa-4fdd-b74e-53a0f6be779e",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerTrackpadTouch2",
+                    "type": "Value",
+                    "id": "1851ee96-0a97-416c-9352-7a02aa1d7f75",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5d6eda56-c335-410a-8572-cfe6ca3ed355",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 2}/isTracked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerIsTracked2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "509637b8-398c-4fb7-b568-d82639942760",
+                    "id": "7eaa3fc3-3d9d-4554-a06e-8087703dbbf6",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 2}/trackingState",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerTrackingState2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f7d37334-a9cf-4b32-8b8f-22745a4385f9",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 2}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerPosition2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "087f9683-abee-4763-932a-31bfaca5e9b9",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 2}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerRotation2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9538c0a8-5757-4d1f-b251-8bc110bc6771",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 2}/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerMenu2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "21cf2eaa-f181-404e-899b-0cee8c9d0192",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 2}/gripPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerGripPress2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "66e3231c-a5d9-4d04-8015-8ca546738222",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 2}/triggerPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerTriggerPress2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d87c4d26-5a5d-493e-b1f4-ada89d236c0a",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 2}/trackpadPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerTrackpadPress2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8779c30c-8835-41d4-8a28-831ab8ab90af",
                     "path": "<ViveXRTracker>{Ultimate Tracker 2}/trackpadTouch",
                     "interactions": "",
                     "processors": "",
@@ -2485,10 +1840,187 @@
                     "action": "UltimateTrackerTrackpadTouch2",
                     "isComposite": false,
                     "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "XRTracker3",
+            "id": "4da0e995-967b-4cc6-8226-96416be92ac2",
+            "actions": [
+                {
+                    "name": "UltimateTrackerIsTracked3",
+                    "type": "Value",
+                    "id": "831fcb55-695a-4f66-b16f-4162dcfb7d1c",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerTrackingState3",
+                    "type": "Value",
+                    "id": "38b3d3ce-10fa-4afb-81a2-ba04cd47870f",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerPosition3",
+                    "type": "Value",
+                    "id": "0f1c394e-c30d-4b46-b3e0-c62f3b3766ca",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerRotation3",
+                    "type": "Value",
+                    "id": "248be3d5-472c-4218-b8f3-b8c241c09ba5",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerMenu3",
+                    "type": "Value",
+                    "id": "fea38449-fc13-4769-82fb-23418da72263",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerGripPress3",
+                    "type": "Value",
+                    "id": "fcb93503-cc17-4836-b54f-38a8e3c72811",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerTriggerPress3",
+                    "type": "Value",
+                    "id": "4a0fc5ea-9db7-46e1-81a6-081d76216eaf",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerTrackpadPress3",
+                    "type": "Value",
+                    "id": "168c5026-d847-4ce1-b073-dc6c683f19ac",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerTrackpadTouch3",
+                    "type": "Value",
+                    "id": "b603bbbf-28be-483a-ae8f-c1f0198217bb",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9f2ef838-2f43-429e-8828-8cd1a4726030",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 3}/isTracked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerIsTracked3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "75947ef4-fb27-4512-a94d-36ca3f60aa8b",
+                    "id": "bed2da1a-bc24-4771-8d62-f2638466934d",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 3}/trackingState",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerTrackingState3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "64225eeb-c3c5-4ebe-a6ff-fec7493b42c0",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 3}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerPosition3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6b21ecb3-85c5-47ea-a9ba-316d4d44143f",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 3}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerRotation3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "42588f53-2b90-46b3-9286-16e37e9efb91",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 3}/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerMenu3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "80027455-9e24-4d68-bb8d-106b4b7e3fff",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 3}/gripPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerGripPress3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a11c256c-b363-4ddb-a150-c4616f7ddd82",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 3}/triggerPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerTriggerPress3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4ed2c830-8fe8-4c08-8292-90a682bf8c39",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 3}/trackpadPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerTrackpadPress3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a11776dd-984a-451d-a1be-f24bfa9ec882",
                     "path": "<ViveXRTracker>{Ultimate Tracker 3}/trackpadTouch",
                     "interactions": "",
                     "processors": "",
@@ -2496,10 +2028,165 @@
                     "action": "UltimateTrackerTrackpadTouch3",
                     "isComposite": false,
                     "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "XRTracker4",
+            "id": "ee502b5e-680e-4e20-926c-2fb975feefac",
+            "actions": [
+                {
+                    "name": "UltimateTrackerIsTracked4",
+                    "type": "Value",
+                    "id": "772497f7-5ad1-4bc2-8c6e-38a2aea32a54",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerTrackingState4",
+                    "type": "Value",
+                    "id": "71cf1e04-6719-42de-9efa-6ce118fe4537",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerPosition4",
+                    "type": "Value",
+                    "id": "3b044467-2008-4d88-9cb8-ba78769ac50f",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerRotation4",
+                    "type": "Value",
+                    "id": "9e3506d1-332f-4642-80bc-d962fecef5d5",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerMenu4",
+                    "type": "Value",
+                    "id": "e3ee093d-db0e-4940-9076-f6b3b9c7895a",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerGripPress4",
+                    "type": "Value",
+                    "id": "e55f5600-4191-4855-a0bd-e01db172cecd",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerTriggerPress4",
+                    "type": "Value",
+                    "id": "d811575e-bc63-4c8c-a76b-acfd5a947269",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerTrackpadPress4",
+                    "type": "Value",
+                    "id": "dde82354-f12a-4d58-befb-c2155a7c5a29",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UltimateTrackerTrackpadTouch4",
+                    "type": "Value",
+                    "id": "18c011ce-c96f-4f91-bea4-f3f7a74b6ccc",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6b3f91d3-5ca4-490c-9551-20de7186083c",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 4}/isTracked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerIsTracked4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "9cc15507-e3eb-43b8-ac70-fba559364622",
+                    "id": "c3774b47-d1e7-42ed-9a1b-c8f979a0b877",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 4}/trackingState",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerTrackingState4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8e2aa903-5fcc-4308-94f7-f65f18b48c14",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 4}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerPosition4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e060e342-539a-4b2b-a675-df647478de4d",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 4}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerRotation4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d836b5f6-c6e3-4fa0-8b28-03c1f4ae86ac",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 4}/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerMenu4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "933b25e9-f765-4df8-9f92-6d4c1a8e6de9",
+                    "path": "<ViveXRTracker>{Ultimate Tracker 4}/gripPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltimateTrackerGripPress4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "16be70fa-0846-4052-b6fc-23a12112b25c",
                     "path": "<ViveXRTracker>{Ultimate Tracker 4}/trackpadTouch",
                     "interactions": "",
                     "processors": "",
@@ -2510,7 +2197,7 @@
                 },
                 {
                     "name": "",
-                    "id": "f2f37016-ec45-4faa-bc5e-580636e110d7",
+                    "id": "81248152-288a-46dc-bbfe-8e915d8d7d76",
                     "path": "<ViveXRTracker>{Ultimate Tracker 4}/triggerPress",
                     "interactions": "",
                     "processors": "",
@@ -2521,18 +2208,7 @@
                 },
                 {
                     "name": "",
-                    "id": "4bfbbd1e-d26e-46df-af16-1544a6bcd1ac",
-                    "path": "<ViveXRTracker>{Ultimate Tracker 0}/trackpadPress",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "UltimateTrackerTrackpadPress0",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "53da7544-f689-4b0e-a8d5-e6754555c9db",
+                    "id": "84a04b6c-e94c-40a2-ba18-afa8ef4df30d",
                     "path": "<ViveXRTracker>{Ultimate Tracker 4}/trackpadPress",
                     "interactions": "",
                     "processors": "",
@@ -2552,6 +2228,11 @@
                 {
                     "devicePath": "<XRController>",
                     "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<XRController>",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]
