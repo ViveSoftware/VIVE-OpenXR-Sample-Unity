@@ -4,7 +4,25 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/1.unity
+    guid: bd3b15c49c4805044a3729284b30500f
+  - enabled: 1
+    path: Assets/Scene/BaseScene.unity
+    guid: be2ee63423816f94aa9bfffa8dd8dfb5
+  - enabled: 1
+    path: Assets/Scene/GameFlow.unity
+    guid: cc7f81db312e0e64f99b1780cb23b00b
+  - enabled: 1
+    path: Assets/Scene/RobotAssistant.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scene/Setup.unity
+    guid: 194c28a9e5ae74e48afdb8d1d5673048
+  - enabled: 0
+    path: Assets/Samples/VIVE OpenXR Plugin/2.5.0/VIVE OpenXR Samples/Samples/CustomGesture/CustomGesture.unity
+    guid: eff108a5209eb0a48804dfdba0dabb63
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5fb4ca855ffbabf4889bce06577938a5, type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: f2b1670a18ed53c498de7952fd262159, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 8fc82eb2affe17a4d9defa036a974080, type: 2}
