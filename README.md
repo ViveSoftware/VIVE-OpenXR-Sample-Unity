@@ -1,6 +1,6 @@
 ![Code Samples Banner](./Documentations/Medias/code_samples_banner.png "CodeSamples")
 
-# VIVE OpenXR Starter Samples
+# VIVE OpenXR Code Samples
 
 The start samples here depend on [VIVE OpenXR Unity Plugin](https://developer.vive.com/resources/openxr/unity/) and will inspire you on how to use the features.
 
@@ -29,7 +29,7 @@ git clone https://github.com/ViveSoftware/VIVE-OpenXR-Sample-Unity.git
 3. Click on *VIVE* > *OpenXR Installer* > *Install or Update latest version* from the menu bar to import the **VIVE OpenXR Unity Plugin**.
 4. Navigate to *Project Settings* > *XR Plug-in Management* > *OpenXR* platform settings, select **VIVE XR Support** and enable features you need.
 
-## Test on Android Device
+## Test on VIVE XR Elite / VIVE Focus Vision
 
 <details>
 <summary> MR </summary>
@@ -48,6 +48,12 @@ git clone https://github.com/ViveSoftware/VIVE-OpenXR-Sample-Unity.git
 
 ## Developer Guidelines
 - [MR Documentation](https://github.com/ViveSoftware/VIVE-OpenXR-Sample-Unity/blob/main/Documentations/MR/JelbeeMR.md) 
+- [MR Performance Setting Documentation](https://github.com/ViveSoftware/VIVE-OpenXR-Sample-Unity/blob/main/Documentations/MR/JelbeeMR_Performance.md) 
+- [Passthrough Documentation]()(To be released)
+- [Accessory Documentation]()(To be released)
+- [Human Info Documentation]()(To be released)
+- [Interaction Documentation]()(To be released)
+- [Body Tracking Documentation]()(To be released)
 
 ## Integrate Samples to Your Own Project
 1. Make sure your project uses the same SDK version

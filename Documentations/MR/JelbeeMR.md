@@ -24,14 +24,19 @@ Jelbee MR Demo is an MR experience example for [VIVE XR Elite](https://www.vive.
 5.	**Level 3 MR Portal-Forest** : Use the cursor to draw circle and shoot the portal, it can only be shot on the virtual wall. 
 6.	**Level 3 MR Portal-Universe** : Press the Spacebar to generate planet.
 ## How to Play with XR Elite / Focus Vision
-1.	First of all, you need to setup the environment in `Settings / Boundary / MR Room Setup`, this demo requires surrounding walls, a table and a window. 
-2.	Build the project as an Android apk and install it with adb. 
-3.	Start the app, press the A button on the right controller to set pivots in the environment. You need to specify the pivots of a wall, a window on another wall and a table. 
-4.	Put down the controller and directly press the virtual start button on the table by your hand. 
-5.	**Level 1 Whack-A-Mole** : Pat Jelbee with your hand, hit Jelbee three times to enter the next level. 
-6.	**Level 2 Bubbling** : Use the OK gesture to make bubbles, make bubbles to Jelbee three times to enter the next level. 
-7.	**Level 3 MR Portal-Forest** : Draw a circle towards the wall to create a portal. The first portal only shows the forest outside, and it will be closed automatically after 10 seconds. 
-8.	**Level 3 MR Portal-Universe** : Draw a circle towards the wall to create a portal. The second portal is the space environment, when the sun appears, make fist gesture to grab a planet in, when you open your hand, the planet will join the solar system.
+1.	Setup the environment in `Settings / Boundary / MR Room Setup`, this demo requires surrounding walls, a desk, and a window. 
+2.	Start the app, press the A button on the right controller to set pivots in the environment.
+    - Click the button for the item you want to configure.(Button `Wall`, `Desk` or `Window`)
+    - Select the desired plane.
+    - Click button `Set Wall`,  `Set Desk` or `Set Window` to configurate.
+    - After completing the three configurations, select `Save`.
+    - Finally, click `Start Game`. 
+3.	Put down the controller and directly press the virtual start button on the table by your hand. 
+4.	**Level 1 Whack-A-Mole** : Pat Jelbee with your hand, hit Jelbee three times to enter the next level. 
+5.	**Level 2 Bubbling** : Use the OK gesture to make bubbles, make bubbles to Jelbee three times to enter the next level. 
+6.	**Level 3 MR Portal-Forest** : Draw a circle towards the wall to create a portal. The first portal only shows the forest outside, and it will be closed automatically after 10 seconds. 
+7.	**Level 3 MR Portal-Universe** : Draw a circle towards the wall to create a portal. The second portal is the space environment, when the sun appears, make fist gesture to grab a planet in, when you open your hand, the planet will join the solar system.
+
 ## Developer Guidelines
 +	**MRFlowManager.cs** : The main game flow.
 +	**SceneComponentManager.cs** : Load the plane data which users created in MR Room Setup.
@@ -43,7 +48,3 @@ Jelbee MR Demo is an MR experience example for [VIVE XR Elite](https://www.vive.
 ## Third Party Assets
 +	[Customizable Planet Shaders](https://assetstore.unity.com/packages/vfx/shaders/customizable-planet-shaders-131872) (not included in project)
 +	[DOTween](http://dotween.demigiant.com/)
-## License
-See [LICENSE.pdf](LICENSE.pdf) for more information.
-## Contact Us
-Email: ViveSoftware@htc.com
