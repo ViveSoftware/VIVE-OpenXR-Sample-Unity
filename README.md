@@ -41,19 +41,14 @@ git clone https://github.com/ViveSoftware/VIVE-OpenXR-Sample-Unity.git
 + In `File > Build Settings` click `Build And Run`
 </details>
 
-## Optional Dependencies
-
-- We use the [VRM](https://github.com/vrm-c/UniVRM/releases) packages for the avatar development.
-
-
 ## Developer Guidelines
 - [MR Documentation](https://github.com/ViveSoftware/VIVE-OpenXR-Sample-Unity/blob/main/Documentations/MR/JelbeeMR.md) 
-- [MR Performance Setting Documentation](https://github.com/ViveSoftware/VIVE-OpenXR-Sample-Unity/blob/main/Documentations/MR/JelbeeMR_Performance.md) 
-- [Passthrough Documentation]()(To be released)
-- [Accessory Documentation]()(To be released)
-- [Human Info Documentation]()(To be released)
-- [Interaction Documentation]()(To be released)
-- [Body Tracking Documentation]()(To be released)
+- [MR Performance Setting Documentation]() (To be released)
+- [Passthrough Documentation]() (To be released)
+- [Accessory Documentation]() (To be released)
+- [Human Info Documentation]() (To be released)
+- [Interaction Documentation]() (To be released)
+- [Body Tracking Documentation]() (To be released)
 
 ## Integrate Samples to Your Own Project
 1. Make sure your project uses the same SDK version
