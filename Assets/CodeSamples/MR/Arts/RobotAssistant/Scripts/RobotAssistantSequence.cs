@@ -14,23 +14,50 @@ public class RobotAssistantSequence : MonoBehaviour
     private bool ending = false;
     private Vector3 readyIntoPos;
 
+  
     private void Awake()
     {
-        Transform window = PivotManager.Instance.GetPivot("Window_1");
+        Transform window = null;
+
+        if (PivotManager.Instance != null)
+        {
+            window = PivotManager.Instance.GetPivot("Window_1");
+
+            if (window == null) 
+            {
+                Debug.LogError("Pivot 'Window_1' not found. Make sure it exists in the PivotManager.");
+                return; 
+            } 
+          
+        }
+        else
+        {
+            Debug.LogError("PivotManager.Instance is null. Ensure PivotManager is properly initialized.");
+            return; 
+        }
+
         readyIntoPos = window.position + window.forward * 0.5f + window.up * -0.35f;
+
         robotAssistantManagerInstance.moveSpeed = 1.5f;
         robotAssistantManagerInstance.transform.position = readyIntoPos + window.up * -0.75f;
         robotAssistantManagerInstance.transform.LookAt(window);
-        robotAssistantManagerInstance.transform.eulerAngles = new Vector3(0, robotAssistantManagerInstance.transform.eulerAngles.y, 0);
+
+        robotAssistantManagerInstance.transform.eulerAngles = new Vector3(
+            0,
+            robotAssistantManagerInstance.transform.eulerAngles.y,
+            0
+        );
+
     }
+
 
     private void Update()
     {
-        if (MRFlowManager.Instance.GameState == MRFlowManager.State.welcome && !starting) 
+        if (MRFlowManager.Instance.GameState == MRFlowManager.State.welcome && !starting)
         {
             StartFlow();
         }
-            
+
         if (MRFlowManager.Instance.GameState == MRFlowManager.State.end && ending == false)
         {
             EndFlow();
@@ -82,7 +109,23 @@ public class RobotAssistantSequence : MonoBehaviour
 
         yield return new WaitForSeconds(4f);
 
-        Transform desk = PivotManager.Instance.GetPivot("Desk");
+        Transform desk = null;
+
+        if (PivotManager.Instance != null)
+        {
+            desk = PivotManager.Instance.GetPivot("Desk");
+
+            if (desk == null) 
+            {
+                Debug.LogError("Pivot 'Desk' not found. Make sure it exists in the PivotManager.");
+                yield break; 
+            }
+        }
+        else
+        {
+            Debug.LogError("PivotManager.Instance is null. Ensure PivotManager is properly initialized.");
+            yield break; 
+        }
 
         theEndAnimator.transform.position = desk.position;
         theEndAnimator.transform.localPosition += theEndOffset;

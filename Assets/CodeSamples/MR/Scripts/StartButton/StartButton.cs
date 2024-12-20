@@ -22,15 +22,17 @@ public class StartButton : Singleton<StartButton>
     private List<Transform> rolePos = new List<Transform>();
     private float buttonDistance = 0;
 
+    //update 20241219
     private void Start()
     {
-
+        // Check if PivotManager.Instance is null
         if (PivotManager.Instance == null)
         {
             Debug.LogError("PivotManager.Instance is null. Make sure it is properly initialized.");
             return;
         }
 
+        // Retrieve the Desk Pivot and check if it is null
         Transform deskPivot = PivotManager.Instance.GetPivot("Desk");
         if (deskPivot == null)
         {
@@ -38,12 +40,29 @@ public class StartButton : Singleton<StartButton>
             return;
         }
 
-        fullButton.transform.position = deskPivot.position;
-        fullButton.transform.localEulerAngles = deskPivot.transform.forward;
-        fullButton.transform.DOScale(new Vector3(1f, 1f, 1f), 1f).SetEase(Ease.OutBack);
+        // Safely set the fullButton's transform based on deskPivot
+        if (fullButton != null)
+        {
+            fullButton.transform.position = deskPivot.position;
+            fullButton.transform.localEulerAngles = deskPivot.forward; // 'deskPivot.transform.forward' adjusted to 'deskPivot.forward' for clarity
+            fullButton.transform.DOScale(new Vector3(1f, 1f, 1f), 1f).SetEase(Ease.OutBack);
+        }
+        else
+        {
+            Debug.LogError("FullButton is null. Please assign it in the Inspector.");
+        }
 
-        buttonDistance = Vector3.Distance(upPivot.position, downPivot.position);
+        // Check upPivot and downPivot before calculating buttonDistance
+        if (upPivot != null && downPivot != null)
+        {
+            buttonDistance = Vector3.Distance(upPivot.position, downPivot.position);
+        }
+        else
+        {
+            Debug.LogError("One or both pivots (upPivot, downPivot) are null. Make sure they are properly assigned.");
+        }
     }
+
 
 
     private void OnEnable()

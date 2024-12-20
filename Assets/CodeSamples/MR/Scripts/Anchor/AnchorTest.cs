@@ -152,7 +152,7 @@ namespace VIVE.OpenXR.Samples.Anchor
             isSetDesk = true;
             UINeedUpdate();
         }
-
+        /*
         private void OnAcquirePersistedAnchorCollection()
         {
             if (AnchorManager.IsPersistedAnchorCollectionAcquired()) return;
@@ -168,11 +168,40 @@ namespace VIVE.OpenXR.Samples.Anchor
                 UINeedUpdate();
             });
         }
+        */
+        private void OnAcquirePersistedAnchorCollection()
+        {
+            if (AnchorManager.IsPersistedAnchorCollectionAcquired()) return;
+            if (taskPAC != null) return;
+
+            try
+            {
+                taskPAC = AnchorManager.AcquirePersistedAnchorCollection();
+                taskPAC.AutoComplete();
+                taskPAC.AutoCompleteTask.ContinueWith((act) =>
+                {
+                    taskPAC?.Dispose();
+                    taskPAC = null;
+                    CheckSupported();
+                    UINeedUpdate();
+                });
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Error acquiring persisted anchor collection: {ex.Message}");
+                taskPAC?.Dispose();
+                taskPAC = null;
+            }
+        }
+
 
         private void OnReleasePersistedAnchorCollection()
         {
-            // the taskPAC will be canceled in ReleasePersistedAnchorCollection
-            taskPAC = null;
+            if (taskPAC != null)
+            {
+                taskPAC.Dispose();
+                taskPAC = null;
+            }
 
             anchor1FromPA = null;
             anchor2FromPA = null;
@@ -183,12 +212,14 @@ namespace VIVE.OpenXR.Samples.Anchor
             persistedAnchor1Name = null;
             persistedAnchor2Name = null;
             persistedAnchor3Name = null;
-            //hasPersistedAnchorFiles = false;
 
             AnchorManager.ReleasePersistedAnchorCollection();
             CheckSupported();
             UINeedUpdate();
         }
+
+
+
 
 
         private void OnDisable()
@@ -215,12 +246,19 @@ namespace VIVE.OpenXR.Samples.Anchor
             // Dispose all anchors
             OnClearAllAnchors();
 
+            foreach (var task in tmFPA.GetTasks())
+            {
+                task.Item2.Dispose();
+            }
+
             // Dispose all tasks
             foreach (var task in tasks)
             {
                 task.Dispose();
             }
             tasks.Clear();
+
+
 
             // Clear all task managers.  It's readonly, so no need to dispose.
             tmPA.Clear();
@@ -229,19 +267,24 @@ namespace VIVE.OpenXR.Samples.Anchor
 
         private void OnDestroy()
         {
-            // Dispose all anchors
-            OnClearAllAnchorsInner(true);
+            if (taskPAC != null)
+            {
+                taskPAC.Dispose();
+                taskPAC = null;
+            }
 
+            OnClearAllAnchorsInner(true);
+            foreach (var task in tmFPA.GetTasks())
+            {
+                task.Item2.Dispose();
+            }
+            tmFPA.Clear();
             // Dispose all tasks
             foreach (var task in tasks)
             {
                 task.Dispose();
             }
             tasks.Clear();
-
-            // Clear all task managers.  It's readonly, so no need to dispose.
-            tmPA.Clear();
-            tmFPA.Clear();
         }
 
         public void UINeedUpdate()
@@ -361,7 +404,11 @@ namespace VIVE.OpenXR.Samples.Anchor
                 Debug.Log("AnchorTestHandle: Wait PersistedAnchorCollection acquired");
                 yield return null;
             }
-            taskPAC = null;
+            if (taskPAC != null)
+            {
+                taskPAC.Dispose();
+                taskPAC = null;
+            }
 
             AnchorManager.GetPersistedAnchorProperties(out ViveAnchor.XrPersistedAnchorPropertiesGetInfoHTC properties);
             Debug.Log("AnchorTestHandle: PersistAnchorProperties.maxPersistedAnchorCount=" + properties.maxPersistedAnchorCount);
@@ -535,31 +582,127 @@ namespace VIVE.OpenXR.Samples.Anchor
         {
             OnClearAllAnchorsInner();
         }
-
         public void OnPersistAnchor1()
         {
             Debug.Log("AnchorTestHandle: OnPersistAnchor1()");
+
             if (anchor1 == null)
             {
                 statusResponse.text = "anchor1 is null";
                 return;
             }
 
-            // Create new persisted anchor name by frame count.  Not to follow the original anchor name.
             var newName = MakePersistedAnchorName(MakeAnchorName("anchor1"));
-            Debug.Log($"AnchorTestHandle: Persist {anchor1.Name} to {newName}");
-            var task = tmPA.GetTask(anchor1.GetXrSpace());
-            if (task != null)
+            
+            var xrSpace = anchor1.GetXrSpace();
+            if (tmPA.GetTask(xrSpace) != null)
             {
                 statusResponse.text = "Persist " + newName + " is running, please wait";
                 return;
             }
 
-            task = AnchorManager.PersistAnchor(anchor1, newName);
-            tmPA.AddTask(anchor1.GetXrSpace(), task);
-            statusResponse.text = "Persist " + newName + " task is running, please wait";
-            //StartCoroutine(WaitForPersistTaskCompletion(task, newName));
+            try
+            {
+                using (var task = AnchorManager.PersistAnchor(anchor1, newName))
+                {
+                    if (task == null)
+                    {
+                        throw new InvalidOperationException("Failed to create persistence task.");
+                    }
+
+                    tmPA.AddTask(xrSpace, task);
+                    statusResponse.text = "Persist " + newName + " task is running, please wait";
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Error persisting anchor: {ex.Message}");
+                statusResponse.text = $"Persist anchor failed：{ex.Message}";
+            }
         }
+
+
+
+        public void OnPersistAnchor2()
+        {
+            Debug.Log("AnchorTestHandle: OnPersistAnchor2()");
+
+            if (anchor2 == null)
+            {
+                statusResponse.text = "anchor2 is null";
+                return;
+            }
+
+            var newName = MakePersistedAnchorName(MakeAnchorName("anchor2"));
+
+            var xrSpace = anchor2.GetXrSpace();
+            if (tmPA.GetTask(xrSpace) != null)
+            {
+                statusResponse.text = "Persist " + newName + " is running, please wait";
+                return;
+            }
+
+            try
+            {
+                using (var task = AnchorManager.PersistAnchor(anchor2, newName))
+                {
+                    if (task == null)
+                    {
+                        throw new InvalidOperationException("Failed to create persistence task.");
+                    }
+
+                    tmPA.AddTask(xrSpace, task);
+                    statusResponse.text = "Persist " + newName + " task is running, please wait";
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Error persisting anchor: {ex.Message}");
+                statusResponse.text = $"Persist anchor failed：{ex.Message}";
+            }
+        }
+
+        public void OnPersistAnchor3()
+        {
+            Debug.Log("AnchorTestHandle: OnPersistAnchor3()");
+
+            if (anchor3 == null)
+            {
+                statusResponse.text = "anchor3 is null";
+                return;
+            }
+
+            var newName = MakePersistedAnchorName(MakeAnchorName("anchor3"));
+
+            var xrSpace = anchor3.GetXrSpace();
+            if (tmPA.GetTask(xrSpace) != null)
+            {
+                statusResponse.text = "Persist " + newName + " is running, please wait";
+                return;
+            }
+
+            try
+            {
+                using (var task = AnchorManager.PersistAnchor(anchor3, newName))
+                {
+                    if (task == null)
+                    {
+                        throw new InvalidOperationException("Failed to create persistence task.");
+                    }
+
+                    tmPA.AddTask(xrSpace, task);
+                    statusResponse.text = "Persist " + newName + " task is running, please wait";
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Error persisting anchor: {ex.Message}");
+                statusResponse.text = $"Persist anchor failed：{ex.Message}";
+            }
+        }
+
+
+
         Pose ConvertWorldPoseToLocal(Pose worldPose, Transform parentTransform)
         {
             Vector3 localPosition = parentTransform.InverseTransformPoint(worldPose.position);
@@ -575,17 +718,17 @@ namespace VIVE.OpenXR.Samples.Anchor
                 return;
             }
 
-          
+
             if (setup.pivotGizmoMap.TryGetValue(name, out PivotGizmo existingPivot))
             {
-                
+
                 existingPivot.transform.localPosition = pose.position;
                 existingPivot.transform.localRotation = pose.rotation;
                 statusResponse.text = $"Moved existing Pivot: {name} to position: {existingPivot.transform.position}";
             }
             else
             {
-              
+
                 PivotGizmo pivotGizmo = Instantiate(setup.pivotGizmoPrefab, setup.pivotGizmoRoot);
                 pivotGizmo.SetLabel(name);
                 pivotGizmo.transform.localPosition = pose.position;
@@ -596,54 +739,7 @@ namespace VIVE.OpenXR.Samples.Anchor
                 statusResponse.text = $"Created new Pivot: {name}, position: {pivotGizmo.transform.position}";
             }
         }
-
-        public void OnPersistAnchor2()
-        {
-            Debug.Log("AnchorTestHandle: OnPersistAnchor2()");
-            if (anchor2 == null)
-            {
-                statusResponse.text = "anchor2 is null";
-                return;
-            }
-
-            // Create new persisted anchor name by frame count.  Not to follow the original anchor name.
-            var newName = MakePersistedAnchorName(MakeAnchorName("anchor2"));
-            Debug.Log($"AnchorTestHandle: Persist {anchor2.Name} to {newName}");
-            var task = tmPA.GetTask(anchor2.GetXrSpace());
-            if (task != null)
-            {
-                statusResponse.text = "Persist " + newName + " is running, please wait";
-                return;
-            }
-
-            task = AnchorManager.PersistAnchor(anchor2, newName);
-            tmPA.AddTask(anchor2.GetXrSpace(), task);
-            statusResponse.text = "Persist " + newName + " task is running, please wait";
-        }
-
-        public void OnPersistAnchor3()
-        {
-            Debug.Log("AnchorTestHandle: OnPersistAnchor3()");
-            if (anchor3 == null)
-            {
-                statusResponse.text = "anchor3 is null";
-                return;
-            }
-
-            // Create new persisted anchor name by frame count.  Not to follow the original anchor name.
-            var newName = MakePersistedAnchorName(MakeAnchorName("anchor3"));
-            Debug.Log($"AnchorTestHandle: Persist {anchor3.Name} to {newName}");
-            var task = tmPA.GetTask(anchor3.GetXrSpace());
-            if (task != null)
-            {
-                statusResponse.text = "Persist " + newName + " is running, please wait";
-                return;
-            }
-
-            task = AnchorManager.PersistAnchor(anchor3, newName);
-            tmPA.AddTask(anchor3.GetXrSpace(), task);
-            statusResponse.text = "Persist " + newName + " task is running, please wait";
-        }
+       
 
         public void OnClearPersistedAnchors()
         {
@@ -940,10 +1036,9 @@ namespace VIVE.OpenXR.Samples.Anchor
             if (count == 0)
                 return;
 
-            // Enumerate persisted anchors
-            if (AnchorManager.EnumeratePersistedAnchorNames(out string[] names) != XrResult.XR_SUCCESS)
+            if (AnchorManager.EnumeratePersistedAnchorNames(out string[] names) != XrResult.XR_SUCCESS || names == null)
             {
-                Debug.LogError("AnchorTestHandle: EnumeratePersistedAnchorNames failed");
+                Debug.LogError("AnchorTestHandle: EnumeratePersistedAnchorNames failed or returned null");
                 return;
             }
 
@@ -975,7 +1070,7 @@ namespace VIVE.OpenXR.Samples.Anchor
                     }
                 }
 
-                // Others don't care
+                // Handle other names if necessary
             }
 
             if (hasPersistedAnchor1 != tmpHasPA1 && hasPersistedAnchor1 == false)
@@ -1023,6 +1118,8 @@ namespace VIVE.OpenXR.Samples.Anchor
             // If no persisted anchor, keep the task.
             return hasPA && task != null;
         }
+
+
 
         // If persisted anchors are existed, create anchor from them.
         public void UpdateAnchorsIfPersistExist()
@@ -1090,72 +1187,174 @@ namespace VIVE.OpenXR.Samples.Anchor
             bool needCreateAnchor1 = hasPersistedAnchor1 && anchor1 == null && task1 == null && !string.IsNullOrEmpty(persistedAnchor1Name);
             if (needCreateAnchor1)
             {
-                task1 = AnchorManager.CreateSpatialAnchorFromPersistedAnchor(persistedAnchor1Name, MakeSpatialAnchorName(persistedAnchor1Name));
-                tmFPA.AddTask(persistedAnchor1Name, task1);
-                anchor1FromPA = persistedAnchor1Name;
+                try
+                {
+                    task1?.Dispose(); 
+
+                    using (var tempTask = AnchorManager.CreateSpatialAnchorFromPersistedAnchor(
+                        persistedAnchor1Name,
+                        MakeSpatialAnchorName(persistedAnchor1Name)))
+                    {
+                        if (tempTask == null)
+                        {
+                            throw new InvalidOperationException("CreateSpatialAnchorFromPersistedAnchor failed to return a valid task.");
+                        }
+
+                        tmFPA.AddTask(persistedAnchor1Name, tempTask); 
+                        task1 = tempTask; 
+                        anchor1FromPA = persistedAnchor1Name;
+                    }
+                }
+                catch (FormatException ex)
+                {
+                    Debug.LogError($"Anchor creation failed due to formatting error: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError($"Unexpected exception during anchor creation: {ex.Message}");
+                }
             }
 
             bool needCreateAnchor2 = hasPersistedAnchor2 && anchor2 == null && task2 == null && !string.IsNullOrEmpty(persistedAnchor2Name);
             if (needCreateAnchor2)
             {
-                task2 = AnchorManager.CreateSpatialAnchorFromPersistedAnchor(persistedAnchor2Name, MakeSpatialAnchorName(persistedAnchor2Name));
-                tmFPA.AddTask(persistedAnchor2Name, task2);
-                anchor2FromPA = persistedAnchor2Name;
-            }
+                try
+                {
+                    task2?.Dispose();
 
+                    using (var tempTask = AnchorManager.CreateSpatialAnchorFromPersistedAnchor(
+                        persistedAnchor2Name,
+                        MakeSpatialAnchorName(persistedAnchor2Name)))
+                    {
+                        if (tempTask == null)
+                        {
+                            throw new InvalidOperationException("CreateSpatialAnchorFromPersistedAnchor failed to return a valid task.");
+                        }
+
+                        tmFPA.AddTask(persistedAnchor2Name, tempTask);
+                        task2 = tempTask;
+                        anchor2FromPA = persistedAnchor2Name;
+                    }
+                }
+                catch (FormatException ex)
+                {
+                    Debug.LogError($"Anchor creation failed due to formatting error: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError($"Unexpected exception during anchor creation: {ex.Message}");
+                }
+            }
 
             bool needCreateAnchor3 = hasPersistedAnchor3 && anchor3 == null && task3 == null && !string.IsNullOrEmpty(persistedAnchor3Name);
             if (needCreateAnchor3)
             {
-                task3 = AnchorManager.CreateSpatialAnchorFromPersistedAnchor(persistedAnchor3Name, MakeSpatialAnchorName(persistedAnchor3Name));
-                tmFPA.AddTask(persistedAnchor3Name, task3);
-                anchor3FromPA = persistedAnchor3Name;
+                try
+                {
+                    task3?.Dispose();
+
+                    using (var tempTask = AnchorManager.CreateSpatialAnchorFromPersistedAnchor(
+                        persistedAnchor3Name,
+                        MakeSpatialAnchorName(persistedAnchor3Name)))
+                    {
+                        if (tempTask == null)
+                        {
+                            throw new InvalidOperationException("CreateSpatialAnchorFromPersistedAnchor failed to return a valid task.");
+                        }
+
+                        tmFPA.AddTask(persistedAnchor3Name, tempTask);
+                        task3 = tempTask;
+                        anchor3FromPA = persistedAnchor3Name;
+                    }
+                }
+                catch (FormatException ex)
+                {
+                    Debug.LogError($"Anchor creation failed due to formatting error: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError($"Unexpected exception during anchor creation: {ex.Message}");
+                }
             }
 
             if (task1 != null && task1.IsPollCompleted)
             {
-                var result = task1.Complete();
-                tmFPA.RemoveTask(task1);
-                if (result.Item1 != XrResult.XR_SUCCESS)
+                try
                 {
-                    Debug.LogError("AnchorTestHandle: Create anchor1 from persisted anchor failed");
-                    statusResponse.text = "Create anchor1 from persisted anchor failed";
-                    anchor1FromPA = null;
+                    var result = task1.Complete();
+                    tmFPA.RemoveTask(task1);
+                    if (result.Item1 == XrResult.XR_SUCCESS)
+                    {
+                        anchor1 = result.Item2;
+                        Debug.Log($"Anchor created successfully from persisted anchor: {persistedAnchor1Name}");
+                    }
+                    else
+                    {
+                        Debug.LogError($"Failed to create anchor from persisted anchor {persistedAnchor1Name}: {result.Item1}");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    anchor1 = result.Item2;
+                    Debug.LogError($"Exception during task completion: {ex.Message}");
+                }
+                finally
+                {
+                    task1?.Dispose();
+                    task1 = null;
                 }
             }
 
+
             if (task2 != null && task2.IsPollCompleted)
             {
-                var result = task2.Complete();
-                tmFPA.RemoveTask(task2);
-                if (result.Item1 != XrResult.XR_SUCCESS)
+                try
                 {
-                    Debug.LogError("AnchorTestHandle: Create anchor2 from persisted anchor failed");
-                    statusResponse.text = "Create anchor2 from persisted anchor failed";
-                    anchor2FromPA = null;
+                    var result = task2.Complete();
+                    tmFPA.RemoveTask(task2);
+                    if (result.Item1 == XrResult.XR_SUCCESS)
+                    {
+                        anchor2 = result.Item2;
+                        Debug.Log($"Anchor created successfully from persisted anchor: {persistedAnchor2Name}");
+                    }
+                    else
+                    {
+                        Debug.LogError($"Failed to create anchor from persisted anchor {persistedAnchor2Name}: {result.Item1}");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    anchor2 = result.Item2;
+                    Debug.LogError($"Exception during task completion: {ex.Message}");
+                }
+                finally
+                {
+                    task2?.Dispose();
+                    task2 = null;
                 }
             }
             if (task3 != null && task3.IsPollCompleted)
             {
-                var result = task3.Complete();
-                tmFPA.RemoveTask(task3);
-                if (result.Item1 != XrResult.XR_SUCCESS)
+                try
                 {
-                    Debug.LogError("AnchorTestHandle: Create anchor3 from persisted anchor failed");
-                    statusResponse.text = "Create anchor from persisted anchor failed";
-                    anchor3FromPA = null;
+                    var result = task3.Complete();
+                    tmFPA.RemoveTask(task3);
+                    if (result.Item1 == XrResult.XR_SUCCESS)
+                    {
+                        anchor3 = result.Item2;
+                        Debug.Log($"Anchor created successfully from persisted anchor: {persistedAnchor3Name}");
+                    }
+                    else
+                    {
+                        Debug.LogError($"Failed to create anchor from persisted anchor {persistedAnchor3Name}: {result.Item1}");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    anchor3 = result.Item2;
+                    Debug.LogError($"Exception during task completion: {ex.Message}");
+                }
+                finally
+                {
+                    task3?.Dispose();
+                    task3 = null;
                 }
             }
         }
@@ -1317,74 +1516,51 @@ namespace VIVE.OpenXR.Samples.Anchor
 
             // Check create from persisted anchor tasks
             toRemoveFPA.Clear();
+
             foreach (var taskTuple in tmFPA.GetTasks())
             {
                 var paName = taskTuple.Item1;
                 var task = taskTuple.Item2;
+
                 if (task.IsPollCompleted)
                 {
                     toRemoveFPA.Add(task);
+
                     if (task.PollResult == XrResult.XR_SUCCESS)
                     {
                         var result = task.Complete();
                         if (result.Item1 == XrResult.XR_SUCCESS)
                         {
-                            statusResponse.text = "AnchorTestHandle: Create anchor from persisted anchor " + paName + " success";
+                            Debug.Log($"AnchorTestHandle: Create anchor from persisted anchor {paName} success");
+
                             if (paName == persistedAnchor1Name)
                             {
-
                                 anchor1 = result.Item2;
-                                AnchorManager.GetTrackingSpacePose(anchor1, out Pose pose);
-                                CreatePivotFromPose("Wall_1", pose);
                             }
                             else if (paName == persistedAnchor2Name)
                             {
                                 anchor2 = result.Item2;
-                                AnchorManager.GetTrackingSpacePose(anchor2, out Pose pose);
-                                CreatePivotFromPose("Window_1", pose);
                             }
                             else if (paName == persistedAnchor3Name)
                             {
                                 anchor3 = result.Item2;
-                                AnchorManager.GetTrackingSpacePose(anchor3, out Pose pose);
-                                CreatePivotFromPose("Desk", pose);
                             }
                         }
                         else
                         {
-                            statusResponse.text = "AnchorTestHandle: Create anchor from persisted anchor " + paName + " failed: " + result.Item1;
-                            if (paName == persistedAnchor1Name)
-                            {
-                                anchor1FromPA = null;
-                            }
-                            else if (paName == persistedAnchor2Name)
-                            {
-                                anchor2FromPA = null;
-                            }
-                            else if (paName == persistedAnchor3Name)
-                            {
-                                anchor3FromPA = null;
-                            }
+                            Debug.LogError($"AnchorTestHandle: Failed to create anchor from {paName}: {result.Item1}");
                         }
                     }
                     else
                     {
-                        statusResponse.text = "AnchorTestHandle: Create anchor from persisted anchor " + paName + " failed: " + task.PollResult;
-                        if (paName == persistedAnchor1Name)
-                        {
-                            anchor1FromPA = null;
-                        }
-                        else if (paName == persistedAnchor2Name)
-                        {
-                            anchor2FromPA = null;
-                        }
-                        else if (paName == persistedAnchor3Name)
-                        {
-                            anchor3FromPA = null;
-                        }
+                        Debug.LogError($"AnchorTestHandle: Poll failed for {paName}: {task.PollResult}");
                     }
+
+                    // Dispose of the completed or failed task
+                    task.Dispose();
                 }
             }
+
             foreach (var task in toRemoveFPA)
             {
                 tmFPA.RemoveTask(task);

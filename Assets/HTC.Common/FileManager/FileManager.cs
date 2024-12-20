@@ -28,22 +28,30 @@ namespace com.HTC.Common
             Debug.Log("Save file to: " + path);
         }
 
-        public static T LoadData<T>(string path) where T: class
+        //update 20241219
+        public static T LoadData<T>(string path) where T : class
         {
             if (File.Exists(path))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
-
                 var ss = new SurrogateSelector();
 
                 addSurrogates(ss);
-
                 formatter.SurrogateSelector = ss;
 
-                FileStream stream = new FileStream(path, FileMode.Open);
-                T data = formatter.Deserialize(stream) as T;
-                stream.Close();
-                return data;
+                // Use 'using' to ensure proper disposal of FileStream
+                try
+                {
+                    using (FileStream stream = new FileStream(path, FileMode.Open))
+                    {
+                        return formatter.Deserialize(stream) as T;
+                    }
+                }
+                catch
+                {
+                    Debug.LogError($"Error during deserialization");
+                    return null;
+                }
             }
             else
             {
@@ -51,6 +59,7 @@ namespace com.HTC.Common
                 return null;
             }
         }
+
 
         private static void addSurrogates(SurrogateSelector selector)
         {

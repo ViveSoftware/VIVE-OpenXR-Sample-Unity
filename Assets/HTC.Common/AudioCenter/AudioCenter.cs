@@ -106,8 +106,17 @@ namespace com.HTC.Common
 
         public bool isPlaying(string playerTag)
         {
-            return GetPlayer(playerTag).isPlaying;
+            var player = GetPlayer(playerTag);
+
+            if (player == null)
+            {
+                Debug.LogError($"Player with tag '{playerTag}' not found.");
+                return false; // Or return a default value, depending on the desired behavior
+            }
+
+            return player.isPlaying;
         }
+
     }
 }
 
