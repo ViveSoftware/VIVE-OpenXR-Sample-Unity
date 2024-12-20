@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/CodeSamples/MR/Scene/BaseScene.unity
+    path: Assets/VIVE/OpenXR/CodeSamples/MR/Scene/BaseScene.unity
     guid: be2ee63423816f94aa9bfffa8dd8dfb5
   - enabled: 1
-    path: Assets/CodeSamples/MR/Scene/GameFlow.unity
+    path: Assets/VIVE/OpenXR/CodeSamples/MR/Scene/GameFlow.unity
     guid: cc7f81db312e0e64f99b1780cb23b00b
   - enabled: 1
-    path: Assets/CodeSamples/MR/Scene/RobotAssistant.unity
+    path: Assets/VIVE/OpenXR/CodeSamples/MR/Scene/RobotAssistant.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/CodeSamples/MR/Scene/Setup.unity
+    path: Assets/VIVE/OpenXR/CodeSamples/MR/Scene/Setup.unity
     guid: 194c28a9e5ae74e48afdb8d1d5673048
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: cbdb43208b65ca940b77f7aa6ee4acc9, type: 2}

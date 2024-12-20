@@ -1,0 +1,23 @@
+{
+    "name": "VIVE.OpenXR.CodeSamples",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d0a204fb2c62e9f4caca92f1c1e8c06b",
+        "GUID:4aa80e501d649f0408d84c41352e4032",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [
+        "Android",
+        "Editor",
+        "WSA",
+        "WindowsStandalone64"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
