@@ -4,7 +4,7 @@ This folder contains documents related to the following topics. The topics cover
 ## Topics
 ### MR 
 - [Jelbee MR Documentation](https://github.com/ViveSoftware/VIVE-OpenXR-Sample-Unity/blob/main/Documentations/MR/JelbeeMR.md)
-- [Jelbee MR Performance Setting]() (To be released)
+- [MR Performance Setting]() (To be released)
 ### Passthrough
 To be released.
 ### Accessory

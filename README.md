@@ -4,7 +4,7 @@
 
 The start samples here depend on [VIVE OpenXR Unity Plugin](https://developer.vive.com/resources/openxr/unity/) and will inspire you on how to use the features.
 
-The [HTC License](./LICENSE) applies to the samples.
+The [HTC License](./LICENSE.pdf) applies to the samples.
 
 This project was built using the [Unity 2021.3.16f1](https://unity.com/download).
 
