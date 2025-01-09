@@ -1,53 +1,54 @@
-﻿using UnityEngine;
-using VIVE.OpenXR.CompositionLayer;
+﻿// Copyright HTC Corporation All Rights Reserved.
+
+using UnityEngine;
+
 using VIVE.OpenXR.Passthrough;
 
-namespace com.HTC.Common
+
+namespace VIVE.OpenXR.CompositionLayer.Samples.Passthrough
 {
     public class PassthroughSetting : MonoBehaviour
     {
-        private VIVE.OpenXR.Passthrough.XrPassthroughHTC activePassthroughID = 0;
+        private OpenXR.Passthrough.XrPassthroughHTC activePassthroughID = 0;
         private LayerType currentActiveLayerType = LayerType.Underlay;
 
-        private void OnEnable()
+        private void Start()
         {
-#if !UNITY_EDITOR
-             PassthroughAPI.SetPassthroughLayerType(activePassthroughID, LayerType.Underlay);
-             currentActiveLayerType = LayerType.Underlay;
-            PassthroughAPI.CreatePlanarPassthrough(out activePassthroughID, currentActiveLayerType, OnDestroyPassthroughFeatureSession);
-#endif
+            StartPassthrough();
         }
 
-        private void OnDisable()
+        private void Update()
         {
-#if !UNITY_EDITOR
-            PassthroughAPI.DestroyPassthrough(activePassthroughID);
-            activePassthroughID = 0;
-            //PassthroughUtils.DisablePassThrough();
-#endif
+
         }
 
-        private void OnApplicationPause(bool isPaused)
+        public void SetPassthroughToOverlay()
         {
-#if !UNITY_EDITOR
-            if (isPaused)
+            if (activePassthroughID != 0)
             {
-                PassthroughAPI.DestroyPassthrough(activePassthroughID);
-                activePassthroughID = 0;
+                PassthroughAPI.SetPassthroughLayerType(activePassthroughID, LayerType.Overlay);
+                currentActiveLayerType = LayerType.Overlay;
             }
-            else
+        }
+
+        public void SetPassthroughToUnderlay()
+        {
+            if (activePassthroughID != 0)
             {
                 PassthroughAPI.SetPassthroughLayerType(activePassthroughID, LayerType.Underlay);
                 currentActiveLayerType = LayerType.Underlay;
-                PassthroughAPI.CreatePlanarPassthrough(out activePassthroughID, currentActiveLayerType, OnDestroyPassthroughFeatureSession);
             }
-#endif
         }
-        void OnDestroyPassthroughFeatureSession(VIVE.OpenXR.Passthrough.XrPassthroughHTC passthroughID)
+
+        void StartPassthrough()
+        {
+            PassthroughAPI.CreatePlanarPassthrough(out activePassthroughID, currentActiveLayerType, OnDestroyPassthroughFeatureSession);
+        }
+
+        void OnDestroyPassthroughFeatureSession(OpenXR.Passthrough.XrPassthroughHTC passthroughID)
         {
             PassthroughAPI.DestroyPassthrough(passthroughID);
             activePassthroughID = 0;
         }
-
     }
 }

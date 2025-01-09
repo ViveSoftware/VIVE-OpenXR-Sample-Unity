@@ -1536,14 +1536,20 @@ namespace VIVE.OpenXR.Samples.Anchor
                             if (paName == persistedAnchor1Name)
                             {
                                 anchor1 = result.Item2;
+                                AnchorManager.GetTrackingSpacePose(anchor1, out Pose pose);
+                                CreatePivotFromPose("Wall_1", pose);
                             }
                             else if (paName == persistedAnchor2Name)
                             {
                                 anchor2 = result.Item2;
+                                AnchorManager.GetTrackingSpacePose(anchor2, out Pose pose);
+                                CreatePivotFromPose("Window_1", pose);
                             }
                             else if (paName == persistedAnchor3Name)
                             {
                                 anchor3 = result.Item2;
+                                AnchorManager.GetTrackingSpacePose(anchor3, out Pose pose);
+                                CreatePivotFromPose("Desk", pose);
                             }
                         }
                         else

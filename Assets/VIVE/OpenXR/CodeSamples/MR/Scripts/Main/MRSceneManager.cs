@@ -8,9 +8,9 @@ public class MRSceneManager : MonoBehaviour
 {
     [SerializeField]
     private bool enterSetup = false;
-
     [SerializeField]
-    private PassthroughSetting passthrough;
+    private bool enterPerformance = false;
+  
 
     [SerializeField]
     private ScenePlaneGenerator planeGenerator;
@@ -18,24 +18,28 @@ public class MRSceneManager : MonoBehaviour
     private const string SetupScene = "Setup";
     private const string GameFlow = "GameFlow";
     private const string RobotAssistant = "RobotAssistant";
+    private const string MRPerformance = "MRPerformance";
     private const string LOG_TAG = "JelbeeMR";
 
     private MRScenePerceptionHelper scenePerceptionHelper;
     private bool isGameSceneLoaded = false;
 
     public bool isLoadSetup = false;
+    public bool isLoadPerformance = false;
 
     protected void Awake()
     {
         isGameSceneLoaded = false;
         EventMediator.LeaveSetupMode += LeaveSetupMode;
         EventMediator.RestartGame += RestartGame;
+        EventMediator.LeavePerformanceMode += LeavePerformanceMode;
     }
 
     private void OnDestroy()
     {
         EventMediator.LeaveSetupMode -= LeaveSetupMode;
         EventMediator.RestartGame -= RestartGame;
+        EventMediator.LeavePerformanceMode -= LeavePerformanceMode;
     }
 
     private void RestartGame()
@@ -53,6 +57,13 @@ public class MRSceneManager : MonoBehaviour
 
         Initialize();
     }
+    public void LeavePerformanceMode()
+    {
+        isLoadPerformance = false;
+        SceneManager.UnloadSceneAsync(MRPerformance);
+
+        Initialize();
+    }
 
     private void EnterSetupMode()
     {
@@ -66,6 +77,18 @@ public class MRSceneManager : MonoBehaviour
         SceneManager.LoadSceneAsync(SetupScene, LoadSceneMode.Additive);
     }
 
+    private void EnterPerformanceMode()
+    {
+        if (isGameSceneLoaded)
+        {
+            SceneManager.UnloadSceneAsync(GameFlow);
+            SceneManager.UnloadSceneAsync(RobotAssistant);
+            isGameSceneLoaded = false;
+        }
+        isLoadPerformance = true;
+        SceneManager.LoadSceneAsync(MRPerformance, LoadSceneMode.Additive);
+    }
+
     //#if UNITY_EDITOR
     private void Start()
     {
@@ -75,6 +98,11 @@ public class MRSceneManager : MonoBehaviour
         if (enterSetup)
         {
             EnterSetupMode();
+            return;
+        }
+        if (enterPerformance)
+        {
+            EnterPerformanceMode();
             return;
         }
 
@@ -151,14 +179,7 @@ public class MRSceneManager : MonoBehaviour
 
             if (PivotManager.Instance.IsValid)
             {
-                if (passthrough != null)
-                {
-                    passthrough.gameObject.SetActive(true);
-                }
-                else
-                {
-                    Debug.LogError("Passthrough object is null. Cannot set active.");
-                }
+              
 
                 SceneManager.LoadSceneAsync(GameFlow, LoadSceneMode.Additive);
                 SceneManager.LoadSceneAsync(RobotAssistant, LoadSceneMode.Additive);
@@ -176,6 +197,12 @@ public class MRSceneManager : MonoBehaviour
         {
             if (isLoadSetup == false)
                 EnterSetupMode();
+        }
+        else if (ViveInput.GetPressDownEx(ControllerRole.LeftHand, ControllerButton.BKey) || ViveInput.GetPressDownEx(ControllerRole.RightHand, ControllerButton.BKey))
+        {
+            if (isLoadPerformance == false)
+                EnterPerformanceMode();
+             
         }
 
     }
