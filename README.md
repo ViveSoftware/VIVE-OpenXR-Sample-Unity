@@ -36,14 +36,14 @@ git clone https://github.com/ViveSoftware/VIVE-OpenXR-Sample-Unity.git
 
 +	Set Build `Settings > Platform` to Android
 +   Import [[Customizable Planet Shaders]](https://assetstore.unity.com/packages/vfx/shaders/customizable-planet-shaders-131872) package into project.
-+	Set BaseScene as the starting scene
++	Add scenes `BaseScene`, `GameFlow`, `RobotAssistant`, `Setup` and `MRPerformance` to the build setttings accordingly.
 +	Check OpenXR in `Project Settings > XR Plug-in Management > Initialize XR on Startup`
 + In `File > Build Settings` click `Build And Run`
 </details>
 
 ## Developer Guidelines
 - [MR Documentation](https://github.com/ViveSoftware/VIVE-OpenXR-Sample-Unity/blob/main/Documentations/MR/JelbeeMR.md) 
-- [MR Performance Setting Documentation]() (To be released)
+- [MR Performance Setting Documentation](https://github.com/ViveSoftware/VIVE-OpenXR-Sample-Unity/blob/main/Documentations/MR/MR_Performance.md)
 - [Passthrough Documentation]() (To be released)
 - [Accessory Documentation]() (To be released)
 - [Human Info Documentation]() (To be released)
