@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.htc.upm.vive-input-utility": "file:../UnityPackages/com.htc.upm.vive-input-utility@1.19.0-preview.12",
+    "com.htc.upm.vive-input-utility": "1.20.2",
     "com.htc.upm.vive.openxr": "https://github.com/ViveSoftware/VIVE-OpenXR.git?path=com.htc.upm.vive.openxr",
     "com.unity.collab-proxy": "2.0.1",
     "com.unity.feature.development": "1.0.1",
@@ -15,7 +15,7 @@
     "com.unity.xr.hands": "1.3.0",
     "com.unity.xr.interaction.toolkit": "2.3.1",
     "com.unity.xr.management": "4.4.0",
-    "com.unity.xr.openxr": "1.6.0",
+    "com.unity.xr.openxr": "1.12.1",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -48,5 +48,13 @@
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
   },
-  "scopedRegistries": []
+  "scopedRegistries": [
+    {
+      "name": "HTC",
+      "url": "https://npm-registry.vive.com",
+      "scopes": [
+        "com.htc.upm"
+      ]
+    }
+  ]
 }

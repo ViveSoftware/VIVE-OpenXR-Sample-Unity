@@ -27,3 +27,9 @@ Demigiant website (documentation, examples, etc): http://www.demigiant.com
 // NOTES //////////////////////////////////////////////////////
 
 - DOTween's Utility Panel can be found under "Tools > Demigiant > DOTween Utility Panel" and also contains other useful options, plus a tab to set DOTween's preferences
+
+
+// LICENSE //////////////////////////////////////////////////////
+
+DOTween (http://dotween.demigiant.com/) licensed under DOTween default version license. To review the DOTween license, look for Assets\3rdParty\DOTween\readme.txt in install directory or on the website http://dotween.demigiant.com/license.php.
+The DOTween source code can be downloaded from http://dotween.demigiant.com/download.php.

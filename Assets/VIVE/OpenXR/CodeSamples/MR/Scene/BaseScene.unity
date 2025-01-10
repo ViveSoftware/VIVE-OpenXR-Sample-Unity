@@ -824,9 +824,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enterSetup: 0
-  passthrough: {fileID: 549045499}
+  enterPerformance: 0
   planeGenerator: {fileID: 1075500694}
   isLoadSetup: 0
+  isLoadPerformance: 0
 --- !u!114 &1075500694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1084,15 +1085,15 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 20
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Please set pivots first
+  m_Text: 'Click A to setup pivots
 
-    Click A to setup'
+    Click B for performance setting'
 --- !u!222 &1897355514
 CanvasRenderer:
   m_ObjectHideFlags: 0

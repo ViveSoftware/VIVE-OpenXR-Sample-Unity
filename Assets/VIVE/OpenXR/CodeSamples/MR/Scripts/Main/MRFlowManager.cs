@@ -38,6 +38,21 @@ public class MRFlowManager : Singleton<MRFlowManager>
             desk = PivotManager.Instance.GetPivot("Desk");
             wall = PivotManager.Instance.GetPivot("Wall_1");
             window = PivotManager.Instance.GetPivot("Window_1");
+
+            if (desk == null)
+            {
+                Debug.LogError("PivotManager.Instance.GetPivot returned null for 'Desk'");
+            }
+
+            if (wall == null)
+            {
+                Debug.LogError("PivotManager.Instance.GetPivot returned null for 'Wall_1'");
+            }
+
+            if (window == null)
+            {
+                Debug.LogError("PivotManager.Instance.GetPivot returned null for 'Window_1'");
+            }
         }
         else
         {
@@ -54,45 +69,81 @@ public class MRFlowManager : Singleton<MRFlowManager>
             Debug.LogError("Window(Clone) not found in scene.");
         }
 
-        // sync all rotation
+        // Sync all rotation
         if (wall != null)
         {
             transform.rotation = wall.rotation;
         }
 
-        // welcome
-        if (WelcomeSequence.Instance != null)
+        // Welcome
+        if (WelcomeSequence.Instance != null && desk != null)
         {
             WelcomeSequence.Instance.IntoRoomPivot.position = desk.position + Vector3.up * 0.6f;
 
-            Vector3 fwd = transform.TransformDirection(wall.forward);
-            Ray ray = new Ray(WelcomeSequence.Instance.IntoRoomPivot.position, fwd * 10);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 10))
+            if (wall != null)
             {
-                if (hit.transform.GetComponent<PlaneController>().ShapeType == com.HTC.WVRLoader.ShapeTypeEnum.wall)
-                    WelcomeSequence.Instance.WallHole.transform.position = hit.point + Vector3.up * 0.15f;
+                Vector3 fwd = transform.TransformDirection(wall.forward);
+                Ray ray = new Ray(WelcomeSequence.Instance.IntoRoomPivot.position, fwd * 10);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 10))
+                {
+                    PlaneController planeController = hit.transform.GetComponent<PlaneController>();
+                    if (planeController != null && planeController.ShapeType == com.HTC.WVRLoader.ShapeTypeEnum.wall)
+                    {
+                        WelcomeSequence.Instance.WallHole.transform.position = hit.point + Vector3.up * 0.15f;
+                    }
+                }
             }
         }
         else
         {
-            Debug.LogError("WelcomeSequence.Instance is null.");
+            if (desk == null)
+            {
+                Debug.LogError("Desk is null. Cannot position IntoRoomPivot.");
+            }
+            if (WelcomeSequence.Instance == null)
+            {
+                Debug.LogError("WelcomeSequence.Instance is null.");
+            }
         }
 
-        // whack-a-mole
-        if (WhackAMole.Instance != null)
+        // Whack-a-Mole
+        if (WhackAMole.Instance != null && desk != null)
         {
             WhackAMole.Instance.transform.GetChild(0).position = desk.position;
             WhackAMole.Instance.transform.GetChild(0).rotation = desk.rotation;
         }
+        else
+        {
+            if (desk == null)
+            {
+                Debug.LogError("Desk is null. Cannot position Whack-a-Mole.");
+            }
+            if (WhackAMole.Instance == null)
+            {
+                Debug.LogError("WhackAMole.Instance is null.");
+            }
+        }
 
-        // ending portal
+        // Ending portal
         if (wall != null && EndingPortal != null)
         {
             EndingPortal.position = wall.position;
             EndingPortal.eulerAngles = new Vector3(wall.eulerAngles.x, wall.eulerAngles.y + 180f, wall.eulerAngles.z);
         }
+        else
+        {
+            if (wall == null)
+            {
+                Debug.LogError("Wall is null. Cannot position EndingPortal.");
+            }
+            if (EndingPortal == null)
+            {
+                Debug.LogError("EndingPortal is null.");
+            }
+        }
     }
+
 
     private void Update()
     {

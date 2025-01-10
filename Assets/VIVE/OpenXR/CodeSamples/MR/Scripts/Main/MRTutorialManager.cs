@@ -42,14 +42,20 @@ public class MRTutorialManager : Singleton<MRTutorialManager>
         if (PivotManager.Instance != null)
         {
             Transform pivot = PivotManager.Instance.GetPivot(robotPivotKey);
+
+            if (pivot == null)
+            {
+                Debug.LogError($"PivotManager.Instance.GetPivot returned null for key: {robotPivotKey}");
+                return;
+            }
+
             robotPivot = pivot.position + pivotOffset;
         }
         else
         {
-            Debug.Log("PivotManager.Instance is null");
+            Debug.LogError("PivotManager.Instance is null");
             return;
         }
-
     }
 
     public void ShowTutorial(string tutorialName, bool flyToPivot, Action onTutorialCompleted = null)
@@ -94,7 +100,6 @@ public class MRTutorialManager : Singleton<MRTutorialManager>
             Debug.LogError("RobotAssistantManager.instance is null. Cannot move robot to pivot.");
         }
     }
-
     private void ShowCurrentTutorial()
     {
         if (!string.IsNullOrEmpty(currentTutorial))
@@ -116,6 +121,13 @@ public class MRTutorialManager : Singleton<MRTutorialManager>
                 if (BoxPivotManager.Instance != null)
                 {
                     Transform handHintPivot = BoxPivotManager.Instance.Get(tutorial.HandHintPivot);
+
+                    if (handHintPivot == null)
+                    {
+                        Debug.LogError($"BoxPivotManager.Instance.Get returned null for pivot: {tutorial.HandHintPivot}");
+                        return;
+                    }
+
                     handHintMgr.Show(tutorial.Tutorial, handHintPivot);
                     Invoke("InvokeTutorialCompleted", tutorial.Duration);
                 }
@@ -134,6 +146,7 @@ public class MRTutorialManager : Singleton<MRTutorialManager>
             Debug.LogError("Tutorial ID cannot be empty!");
         }
     }
+   
 
     private void InvokeTutorialCompleted()
     {
