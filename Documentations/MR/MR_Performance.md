@@ -22,7 +22,7 @@ Jelbee MR Performance Setting is an MR experience optimization demo designed for
 2.  Click the button for the item you want to configurate.
 3.  After completing the configurations, select `Start`. 
 
-![mrperformance01.png](././Documentations/Medias/mrperformance01.png)
+![mrperformance01.png](https://github.com/ViveSoftware/VIVE-OpenXR-Sample-Unity/blob/main/Documentations/Medias/mrperformance01.png)
 
 ## Developer Guidelines
 +	**PerformanceController.cs** : Control the performance of MR Related features.  
